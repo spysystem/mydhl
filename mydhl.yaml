@@ -1,0 +1,831 @@
+swagger: "2.0"
+
+info:
+  title: 'Integration for DHL Express MyDHL Service'
+  version: 1.0.0
+  description: 'OpenAPI description for the Integration with MyDHL'
+  contact:
+    name: 'Thomas Hansen'
+    email: thomas@spysystem.dk
+    url: 'http://spysystem.dk'
+
+host: wsbexpress.dhl.com
+basePath: /rest/sndpt
+schemes:
+  - https
+
+securityDefinitions:
+  BasicAuth:
+    type: basic
+
+security:
+  - BasicAuth: []
+
+tags:
+  - name: ShipmentRequest
+    description: Shipment Request
+  - name: DeleteShipment
+    description: Shipment Delete
+  - name: TrackingRequest
+    description: Tracking Request
+  - name: UpdateShipment
+    description: Shipment Update
+  - name: RequestPickup
+    description: Pickup Request
+
+paths:
+#region ShipmentRequestRequest
+  /ShipmentRequest:
+    post:
+      tags:
+        - ShipmentRequest
+      operationId: requestShipment
+      summary: Create a Shipment
+      parameters:
+      - name: data
+        in: body
+        description: Shipment Data
+        schema:
+          $ref: '#/definitions/ShipmentRequestRequest'
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/ShipmentRequestResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+#endregion ShipmentRequest
+
+responses:
+  Unauthorized:
+    description: Unauthorized
+    schema:
+      $ref: '#/definitions/401Response'
+
+definitions:
+
+#region ShipmentRequestRequest
+  Dimensions:
+    type: object
+    properties:
+      Length:
+        type: number
+      Width:
+        type: number
+      Height:
+        type: number
+
+  RequestedPackage:
+    type: object
+    properties:
+      "@number":
+        type: integer
+      Weight:
+        type: number
+      Dimensions:
+        $ref: '#/definitions/Dimensions'
+      CustomerReferences:
+        type: string
+
+  Packages:
+    type: object
+    properties:
+      RequestedPackages:
+        type: array
+        items:
+          $ref: '#/definitions/RequestedPackage'
+
+  Contact:
+    type: object
+    required:
+      - PersonName
+      - CompanyName
+    properties:
+      PersonName:
+        type: string
+      CompanyName:
+        type: string
+      PhoneNumber:
+        type: string
+      EmailAddress:
+        type: string
+
+  Address:
+    type: object
+    required:
+      - StreetLines
+      - City
+      - PostalCode
+      - CountryCode
+    properties:
+      StreetLines:
+        type: string
+      StreetName:
+        type: string
+      BuildingName:
+        type: string
+      StreetNumber:
+        type: string
+      StreetLines2:
+        type: string
+      StreetLines3:
+        type: string
+      City:
+        type: string
+      StateOrProvinceCode:
+        type: string
+      PostalCode:
+        type: string
+      CountryCode:
+        type: string
+      Suburb:
+        type: string
+
+  RegistrationNumber:
+    type: object
+    required:
+      - Number
+      - NumberTypeCode
+      - NumberIssuerCountryCode
+    properties:
+      Number:
+        type: string
+      NumberTypeCode:
+        type: string
+      NumberIssuerCountryCode:
+        type: string
+
+  RegistrationNumbers:
+    type: object
+    required:
+      - RegistrationNumber
+    properties:
+      RegistrationNumber:
+        type: array
+        items:
+          $ref: '#/definitions/RegistrationNumber'
+
+  StakeHolder:
+    type: object
+    required:
+      - Contact
+      - Address
+    properties:
+      Contact:
+        $ref: '#/definitions/Contact'
+      Address:
+        $ref: '#/definitions/Address'
+      RegistrationNumbers:
+        $ref: '#/definitions/RegistrationNumbers'
+
+  Ship:
+    type: object
+    required:
+      - Shipper
+      - Recipient
+    properties:
+      Shipper:
+        $ref: '#/definitions/StakeHolder'
+      Pickup:
+        $ref: '#/definitions/StakeHolder'
+      BookingRequestor:
+        $ref: '#/definitions/StakeHolder'
+      Buyer:
+        $ref: '#/definitions/StakeHolder'
+      Recipient:
+        $ref: '#/definitions/StakeHolder'
+
+  Billing:
+    type: object
+    required:
+      - ShipperAccountNumber
+      - ShippingPaymentType
+    properties:
+      ShipperAccountNumber:
+        type: string
+      ShippingPaymentType:
+        type: string
+      BillingAccountNumber:
+        type: string
+
+  Service:
+    type: object
+    required:
+      - ServiceType
+    properties:
+      ServiceType:
+        type: string
+      ServiceValue:
+        type: number
+      CurrencyCode:
+        type: string
+      PaymentCode:
+        type: string
+
+  SpecialServices:
+    type: object
+    properties:
+      Service:
+        type: array
+        items:
+          $ref: '#/definitions/Service'
+
+  CustomerLogo:
+    type: object
+    required:
+      - LogoImage
+      - LogoImageFormat
+    properties:
+      LogoImage:
+        type: string
+      LogoImageFormat:
+        type: string
+
+  LabelOptions:
+    type: object
+    properties:
+      PrinterDPI:
+        type: string
+      HideAccountInWaybillDocument:
+        type: string
+      RequestWaybillDocument:
+        type: string
+      NumberOfWaybillDocumentCopies:
+        type: integer
+      RequestDHLCustomsInvoice:
+        type: string
+      DHLCustomsInvoiceLanguage:
+        type: string
+      DHLCustomsInvoiceType:
+        type: string
+      RequestShipmentReceipt:
+        type: string
+      CustomerLogo:
+        $ref: '#/definitions/CustomerLogo'
+
+  DocumentImage:
+    type: object
+    required:
+      - DocumentImage
+    properties:
+      DocumentImage:
+        type: string
+      DocumentImageType:
+        type: string
+      DocumentImageFormat:
+        type: string
+
+  DocumentImages:
+    type: object
+    required:
+      - DocumentImage
+    properties:
+      DocumentImage:
+        type: array
+        items:
+          $ref: '#/definitions/DocumentImage'
+
+  ShipmentInfo:
+    type: object
+    required:
+      - DropOffType
+      - ServiceType
+      - Currency
+      - UnitOfMeasurement
+    properties:
+      DropOffType:
+        type: string
+      ServiceType:
+        type: string
+      LocalServiceType:
+        type: string
+      Account:
+        type: string
+      Currency:
+        type: string
+      UnitOfMeasurement:
+        type: string
+      ShipmentIdentificationNumber:
+        type: string
+      UseOwnShipmentIdentificationNumber:
+        type: string
+      LabelType:
+        type: string
+      LabelTemplate:
+        type: string
+      ArchiveLabelTemplate:
+        type: string
+      CustomsInvoiceTemplate:
+        type: string
+      ShipmentReceiptTemplate:
+        type: string
+      PaperlessTradeEnabled:
+        type: string
+      ParentShipmentIdentificationNumber:
+        type: string
+      RequestTransliterateResponse:
+        type: string
+      RequestAdditionalInformation:
+        type: string
+      Billing:
+        $ref: '#/definitions/Billing'
+      DocumentImages:
+        $ref: '#/definitions/DocumentImages'
+      LabelOptions:
+        $ref: '#/definitions/LabelOptions'
+      SpecialServices:
+        $ref: '#/definitions/SpecialServices'
+
+  Commodities:
+    type: object
+    required:
+      - Description
+    properties:
+      Description:
+        type: string
+      CustomsValue:
+        type: number
+      USFilingTypeValue:
+        type: string
+
+  ExportLineItem:
+    type: object
+    required:
+      - ItemNumber
+      - Quantity
+      - QuantityUnitOfMeasurement
+      - ItemDescription
+      - UnitPrice
+      - NetWeight
+      - GrossWeight
+    properties:
+      CommodityCode:
+        type: string
+      ECCN:
+        type: string
+      ExportReasonType:
+        type: string
+        default: 'PERMANENT'
+      ItemNumber:
+        type: integer
+      Quantity:
+        type: integer
+      QuantityUnitOfMeasurement:
+        type: string
+      ItemDescription:
+        type: string
+      UnitPrice:
+        type: number
+      NetWeight:
+        type: number
+      GrossWeight:
+        type: number
+      ManufacturingCountryCode:
+        type: string
+
+  ExportLineItems:
+    type: object
+    required:
+      - ExportLineItem
+    properties:
+      ExportLineItem:
+        type: array
+        items:
+          $ref: '#/definitions/ExportLineItem'
+
+  InvoiceDeclarationText:
+    type: object
+    required:
+      - DeclarationText
+    properties:
+      DeclarationText:
+        type: string
+
+  InvoiceDeclarationTexts:
+    type: object
+    required:
+      - InvoiceDeclarationText
+    properties:
+      InvoiceDeclarationText:
+        type: array
+        items:
+          $ref: '#/definitions/InvoiceDeclarationText'
+
+  InvoiceSignature:
+    type: object
+    properties:
+      SignatureName:
+        type: string
+      SignatureTitle:
+        type: string
+      SignatureImage:
+        type: string
+
+  ExportDeclaration:
+    type: object
+    properties:
+      DestinationPort:
+        type: string
+      ExporterCode:
+        type: string
+      ExporterID:
+        type: string
+      ExportLicense:
+        type: string
+      ExportReason:
+        type: string
+      ImportLicense:
+        type: string
+      InvoiceDate:
+        type: string
+      InvoiceNumber:
+        type: string
+      PackageMarks:
+        type: string
+      PayerGSTVAT:
+        type: string
+      RecipientReference:
+        type: string
+      TermsOfPayment:
+        type: string
+      InvoiceSignature:
+        $ref: '#/definitions/InvoiceSignature'
+      InvoiceDeclarationTexts:
+        $ref: '#/definitions/InvoiceDeclarationTexts'
+      ExportLineItems:
+        $ref: '#/definitions/ExportLineItems'
+
+  InternationalDetail:
+    type: object
+    required:
+      - Content
+      - Commodities
+    properties:
+      Content:
+        type: string
+      Commodities:
+        $ref: '#/definitions/Commodities'
+      ExportDeclaration:
+        $ref: '#/definitions/ExportDeclaration'
+
+  OnDemandDeliveryOptions:
+    type: object
+    required:
+      - DeliveryOption
+    properties:
+      DeliveryOption:
+        type: string
+      Location:
+        type: string
+      Instructions:
+        type: string
+      GateCode:
+        type: string
+      LWNTypeCode:
+        type: string
+      NeighbourName:
+        type: string
+      NeighbourHouseNumber:
+        type: string
+      AuthorizerName:
+        type: string
+      SelectedServicePointID:
+        type: string
+
+  ShipmentNotification:
+    type: object
+    required:
+      - NotificationMethod
+    properties:
+      NotificationMethod:
+        type: string
+      EmailAddress:
+        type: string
+      BespokeMessage:
+        type: string
+      LanguageCode:
+        type: string
+      LanguageCountryCode:
+        type: string
+
+  ShipmentNotifications:
+    type: object
+    required:
+      - ShipmentNotification
+    properties:
+      ShipmentNotification:
+        type: array
+        items:
+          $ref: '#/definitions/ShipmentNotification'
+
+  RequestedShipment:
+    type: object
+    required:
+      - ShipTimestamp
+      - PaymentInfo
+    properties:
+      ShipTimestamp:
+        type: string
+      PickupLocationCloseTime:
+        type: string
+      SpecialPickupInstruction:
+        type: string
+      PickupLocation:
+        type: string
+      PaymentInfo:
+        type: string
+      OnDemandDeliveryURLRequest:
+        type: string
+      GetRateEstimates:
+        type: string
+      ShipmentInfo:
+        $ref: '#/definitions/ShipmentInfo'
+      InternationalDetail:
+        $ref: '#/definitions/InternationalDetail'
+      OnDemandDeliveryOptions:
+        $ref: '#/definitions/OnDemandDeliveryOptions'
+      Ship:
+        $ref: '#/definitions/Ship'
+      Packages:
+        $ref: '#/definitions/Packages'
+      ShipmentNotifications:
+        $ref: '#/definitions/ShipmentNotifications'
+
+  ShipmentRequest:
+    type: object
+    required:
+      - RequestedShipment
+    properties:
+      RequestedShipment:
+        $ref: '#/definitions/RequestedShipment'
+
+  ShipmentRequestRequest:
+    type: object
+    required:
+      - ShipmentRequest
+    properties:
+      ShipmentRequest:
+        $ref: '#/definitions/ShipmentRequest'
+#endregion
+
+#region ShipmentRequestResponse
+  ResponseContact:
+    type: object
+    required:
+      - PersonName
+      - CompanyName
+    properties:
+      PersonName:
+        type: string
+      CompanyName:
+        type: string
+
+  ResponseSteakHolder:
+    type: object
+    required:
+      - Contact
+      - Address
+    properties:
+      Contact:
+        $ref: '#/definitions/ResponseContact'
+      Address:
+        $ref: '#/definitions/Address'
+
+  ResponseShip:
+    type: object
+    required:
+      - Shipper
+      - Recipient
+    properties:
+      Shipper:
+        $ref: '#/definitions/ResponseSteakHolder'
+      Recipient:
+        $ref: '#/definitions/ResponseSteakHolder'
+
+  ServiceArea:
+    type: object
+    properties:
+      FacilityCode:
+        type: string
+      ServiceAreaCode:
+        type: string
+      InboundSortCode:
+        type: string
+
+  AdditionalInformation:
+    type: object
+    required:
+      - BillingCode
+    properties:
+      BillingCode:
+        type: string
+      VolumetricWeight:
+        type: number
+      CutOffTime:
+        type: string
+      DHLRoutingCode:
+        type: string
+      DHLRoutingDataID:
+        type: string
+      ServiceContentCode:
+        type: string
+      DeliveryDateCode:
+        type: string
+      DeliveryTimeCode:
+        type: string
+      OriginServiceArea:
+        $ref: '#/definitions/ServiceArea'
+      DestinationServiceArea:
+        $ref: '#/definitions/ServiceArea'
+      Ship:
+        $ref: '#/definitions/ResponseShip'
+
+  Charge:
+    type: object
+    required:
+      - ChargeType
+      - ChargeAmount
+    properties:
+      ChargeType:
+        type: string
+      ChargeAmount:
+        type: string
+
+  Charges:
+    type: object
+    required:
+      - Charge
+    properties:
+      Charge:
+        type: array
+        items:
+          $ref: '#/definitions/Charge'
+
+  TotalNet:
+    type: object
+    required:
+      - '@type'
+      - Currency
+      - Amount
+    properties:
+      '@type':
+        type: string
+      Currency:
+        type: string
+      Amount:
+        type: string
+      Charges:
+        $ref: '#/definitions/Charges'
+
+  TotalNetArray:
+      type: array
+      items:
+        $ref: '#/definitions/TotalNet'
+
+  Document:
+    type: object
+    required:
+      - DocumentName
+      - DocumentFormat
+      - DocumentImage
+    properties:
+      DocumentName:
+        type: string
+      DocumentFormat:
+        type: string
+      DocumentImage:
+        type: string
+
+  Documents:
+    type: object
+    required:
+      - Document
+    properties:
+      Document:
+        type: array
+        items:
+          $ref: '#/definitions/Document'
+
+  LabelImage:
+    type: object
+    required:
+      - LabelImageFormat
+      - GraphicImage
+    properties:
+      LabelImageFormat:
+        type: string
+      GraphicImage:
+        type: string
+      HTMLImage:
+        type: string
+
+  LabelImageArray:
+    type: array
+    items:
+      $ref: '#/definitions/LabelImage'
+
+  PackageResult:
+    type: object
+    required:
+      - TrackingNumber
+    properties:
+      '@number':
+        type: integer
+      TrackingNumber:
+        type: string
+
+  PackagesResult:
+    type: object
+    required:
+      - PackageResult
+    properties:
+      PackageResult:
+        type: array
+        items:
+          $ref: '#/definitions/PackageResult'
+
+  Notification:
+    type: object
+    required:
+      - '@code'
+      - Message
+    properties:
+      '@code':
+        type: string
+      Message:
+        type: string
+
+  NotificationArray:
+    type: array
+    items:
+      $ref: '#/definitions/Notification'
+
+  ServiceHeader:
+    type: object
+    required:
+      - MessageTime
+    properties:
+      MessageTime:
+        type: string
+      MessageReference:
+        type: string
+      ServiceInvocationID:
+        type: string
+
+  Response:
+    type: object
+    properties:
+      ServiceHeader:
+        $ref: '#/definitions/ServiceHeader'
+
+  ShipmentRequestResponse:
+    type: object
+    required:
+      - Notification
+    properties:
+      ShipmentIdentificationNumber:
+        type: string
+      DispatchConfirmationNumber:
+        type: string
+      OnDemandDeliveryURL:
+        type: string
+      Response:
+        $ref: '#/definitions/Response'
+      Notification:
+        $ref: '#/definitions/NotificationArray'
+      PackagesResult:
+        $ref: '#/definitions/PackagesResult'
+      LabelImage:
+        $ref: '#/definitions/LabelImageArray'
+      Documents:
+        $ref: '#/definitions/Documents'
+      TotalNet:
+        $ref: '#/definitions/TotalNetArray'
+      AdditionalInformation:
+        $ref: '#/definitions/AdditionalInformation'
+#endregion
+
+  Reason:
+    type: object
+    properties:
+      msg:
+        type: string
+
+  ReasonArray:
+    type: array
+    items:
+      $ref: '#/definitions/Reason'
+
+  Details:
+    type: object
+    properties:
+      msgId:
+        type: string
+
+  401Response:
+    type: object
+    properties:
+      reasons:
+        $ref: '#/definitions/ReasonArray'
+      details:
+        $ref: '#/definitions/Details'
