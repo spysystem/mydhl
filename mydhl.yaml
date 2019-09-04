@@ -152,6 +152,22 @@ definitions:
         type: string
       NumberTypeCode:
         type: string
+        enum:
+          - VAT
+          - EIN
+          - GST
+          - SSN
+          - EOR
+          - DUN
+          - FED
+          - STA
+          - CNP
+          - IE
+          - INN
+          - KPP
+          - OGR
+          - OKP
+          - MRN
       NumberIssuerCountryCode:
         type: string
 
@@ -205,6 +221,10 @@ definitions:
         type: string
       ShippingPaymentType:
         type: string
+        enum:
+          - S
+          - R
+          - T
       BillingAccountNumber:
         type: string
 
@@ -240,6 +260,11 @@ definitions:
         type: string
       LogoImageFormat:
         type: string
+        enum:
+          - GIF
+          - JPEG
+          - JPG
+          - PNG
 
   LabelOptions:
     type: object
@@ -254,12 +279,44 @@ definitions:
         type: integer
       RequestDHLCustomsInvoice:
         type: string
+        enum:
+          - Y
+          - N
       DHLCustomsInvoiceLanguage:
         type: string
+        enum:
+          - eng
+          - bul
+          - cze
+          - dan
+          - ger
+          - gre
+          - est
+          - fin
+          - fre
+          - hun
+          - ice
+          - ita
+          - lit
+          - lav
+          - dut
+          - nno
+          - pol
+          - por
+          - rum
+          - slv
+          - slp
+          - spa
       DHLCustomsInvoiceType:
         type: string
+        enum:
+          - COMMERCIAL_INVOICE
+          - PROFORMA_INVOICE
       RequestShipmentReceipt:
         type: string
+        enum:
+          - Y
+          - N
       CustomerLogo:
         $ref: '#/definitions/CustomerLogo'
 
@@ -272,8 +329,22 @@ definitions:
         type: string
       DocumentImageType:
         type: string
+        enum:
+          - INV
+          - PNV
+          - COO
+          - NAF
+          - CIN
+          - DCL
+          - AWB
       DocumentImageFormat:
         type: string
+        enum:
+          - PDF
+          - PNG
+          - TIFF
+          - GIF
+          - JPEG
 
   DocumentImages:
     type: object
@@ -295,6 +366,9 @@ definitions:
     properties:
       DropOffType:
         type: string
+        enum:
+          - REGULAR_PICKUP
+          - REQUEST_COURIER
       ServiceType:
         type: string
       LocalServiceType:
@@ -305,12 +379,20 @@ definitions:
         type: string
       UnitOfMeasurement:
         type: string
+        enum:
+          - SI
+          - SU
       ShipmentIdentificationNumber:
         type: string
       UseOwnShipmentIdentificationNumber:
         type: string
       LabelType:
         type: string
+        enum:
+          - PDF
+          - ZPL
+          - EPL
+          - LP2
       LabelTemplate:
         type: string
       ArchiveLabelTemplate:
@@ -321,12 +403,18 @@ definitions:
         type: string
       PaperlessTradeEnabled:
         type: string
+        enum:
+          - true
+          - false
       ParentShipmentIdentificationNumber:
         type: string
       RequestTransliterateResponse:
         type: string
       RequestAdditionalInformation:
         type: string
+        enum:
+          - Y
+          - N
       Billing:
         $ref: '#/definitions/Billing'
       DocumentImages:
@@ -365,6 +453,10 @@ definitions:
         type: string
       ExportReasonType:
         type: string
+        enum:
+          - PERMANENT
+          - TEMPORARY
+          - RETURN
         default: 'PERMANENT'
       ItemNumber:
         type: integer
@@ -463,6 +555,9 @@ definitions:
     properties:
       Content:
         type: string
+        enum:
+          - DOCUMENTS
+          - NON_DOCUMENTS
       Commodities:
         $ref: '#/definitions/Commodities'
       ExportDeclaration:
@@ -475,6 +570,10 @@ definitions:
     properties:
       DeliveryOption:
         type: string
+        enum:
+          - TV
+          - SW
+          - SX
       Location:
         type: string
       Instructions:
@@ -499,6 +598,8 @@ definitions:
     properties:
       NotificationMethod:
         type: string
+        enum:
+          - EMAIL
       EmailAddress:
         type: string
       BespokeMessage:
