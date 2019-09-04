@@ -258,8 +258,72 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const DROP_OFF_TYPE_REGULAR_PICKUP = 'REGULAR_PICKUP';
+    const DROP_OFF_TYPE_REQUEST_COURIER = 'REQUEST_COURIER';
+    const UNIT_OF_MEASUREMENT_SI = 'SI';
+    const UNIT_OF_MEASUREMENT_SU = 'SU';
+    const LABEL_TYPE_PDF = 'PDF';
+    const LABEL_TYPE_ZPL = 'ZPL';
+    const LABEL_TYPE_EPL = 'EPL';
+    const LABEL_TYPE_LP2 = 'LP2';
+    const REQUEST_ADDITIONAL_INFORMATION_Y = 'Y';
+    const REQUEST_ADDITIONAL_INFORMATION_N = 'N';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDropOffTypeAllowableValues()
+    {
+        return [
+            self::DROP_OFF_TYPE_REGULAR_PICKUP,
+            self::DROP_OFF_TYPE_REQUEST_COURIER,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getUnitOfMeasurementAllowableValues()
+    {
+        return [
+            self::UNIT_OF_MEASUREMENT_SI,
+            self::UNIT_OF_MEASUREMENT_SU,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getLabelTypeAllowableValues()
+    {
+        return [
+            self::LABEL_TYPE_PDF,
+            self::LABEL_TYPE_ZPL,
+            self::LABEL_TYPE_EPL,
+            self::LABEL_TYPE_LP2,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRequestAdditionalInformationAllowableValues()
+    {
+        return [
+            self::REQUEST_ADDITIONAL_INFORMATION_Y,
+            self::REQUEST_ADDITIONAL_INFORMATION_N,
+        ];
+    }
     
 
     /**
@@ -312,6 +376,14 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
         if ($this->container['drop_off_type'] === null) {
             $invalidProperties[] = "'drop_off_type' can't be null";
         }
+        $allowedValues = $this->getDropOffTypeAllowableValues();
+        if (!is_null($this->container['drop_off_type']) && !in_array($this->container['drop_off_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'drop_off_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['service_type'] === null) {
             $invalidProperties[] = "'service_type' can't be null";
         }
@@ -321,6 +393,30 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
         if ($this->container['unit_of_measurement'] === null) {
             $invalidProperties[] = "'unit_of_measurement' can't be null";
         }
+        $allowedValues = $this->getUnitOfMeasurementAllowableValues();
+        if (!is_null($this->container['unit_of_measurement']) && !in_array($this->container['unit_of_measurement'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'unit_of_measurement', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getLabelTypeAllowableValues();
+        if (!is_null($this->container['label_type']) && !in_array($this->container['label_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'label_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getRequestAdditionalInformationAllowableValues();
+        if (!is_null($this->container['request_additional_information']) && !in_array($this->container['request_additional_information'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'request_additional_information', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -355,6 +451,15 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setDropOffType($drop_off_type)
     {
+        $allowedValues = $this->getDropOffTypeAllowableValues();
+        if (!in_array($drop_off_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'drop_off_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['drop_off_type'] = $drop_off_type;
 
         return $this;
@@ -475,6 +580,15 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setUnitOfMeasurement($unit_of_measurement)
     {
+        $allowedValues = $this->getUnitOfMeasurementAllowableValues();
+        if (!in_array($unit_of_measurement, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'unit_of_measurement', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['unit_of_measurement'] = $unit_of_measurement;
 
         return $this;
@@ -547,6 +661,15 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setLabelType($label_type)
     {
+        $allowedValues = $this->getLabelTypeAllowableValues();
+        if (!is_null($label_type) && !in_array($label_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'label_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['label_type'] = $label_type;
 
         return $this;
@@ -739,6 +862,15 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setRequestAdditionalInformation($request_additional_information)
     {
+        $allowedValues = $this->getRequestAdditionalInformationAllowableValues();
+        if (!is_null($request_additional_information) && !in_array($request_additional_information, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'request_additional_information', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['request_additional_information'] = $request_additional_information;
 
         return $this;

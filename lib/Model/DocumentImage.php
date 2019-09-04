@@ -168,8 +168,54 @@ class DocumentImage implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const DOCUMENT_IMAGE_TYPE_INV = 'INV';
+    const DOCUMENT_IMAGE_TYPE_PNV = 'PNV';
+    const DOCUMENT_IMAGE_TYPE_COO = 'COO';
+    const DOCUMENT_IMAGE_TYPE_NAF = 'NAF';
+    const DOCUMENT_IMAGE_TYPE_CIN = 'CIN';
+    const DOCUMENT_IMAGE_TYPE_DCL = 'DCL';
+    const DOCUMENT_IMAGE_TYPE_AWB = 'AWB';
+    const DOCUMENT_IMAGE_FORMAT_PDF = 'PDF';
+    const DOCUMENT_IMAGE_FORMAT_PNG = 'PNG';
+    const DOCUMENT_IMAGE_FORMAT_TIFF = 'TIFF';
+    const DOCUMENT_IMAGE_FORMAT_GIF = 'GIF';
+    const DOCUMENT_IMAGE_FORMAT_JPEG = 'JPEG';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDocumentImageTypeAllowableValues()
+    {
+        return [
+            self::DOCUMENT_IMAGE_TYPE_INV,
+            self::DOCUMENT_IMAGE_TYPE_PNV,
+            self::DOCUMENT_IMAGE_TYPE_COO,
+            self::DOCUMENT_IMAGE_TYPE_NAF,
+            self::DOCUMENT_IMAGE_TYPE_CIN,
+            self::DOCUMENT_IMAGE_TYPE_DCL,
+            self::DOCUMENT_IMAGE_TYPE_AWB,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDocumentImageFormatAllowableValues()
+    {
+        return [
+            self::DOCUMENT_IMAGE_FORMAT_PDF,
+            self::DOCUMENT_IMAGE_FORMAT_PNG,
+            self::DOCUMENT_IMAGE_FORMAT_TIFF,
+            self::DOCUMENT_IMAGE_FORMAT_GIF,
+            self::DOCUMENT_IMAGE_FORMAT_JPEG,
+        ];
+    }
     
 
     /**
@@ -204,6 +250,22 @@ class DocumentImage implements ModelInterface, ArrayAccess
         if ($this->container['document_image'] === null) {
             $invalidProperties[] = "'document_image' can't be null";
         }
+        $allowedValues = $this->getDocumentImageTypeAllowableValues();
+        if (!is_null($this->container['document_image_type']) && !in_array($this->container['document_image_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'document_image_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getDocumentImageFormatAllowableValues();
+        if (!is_null($this->container['document_image_format']) && !in_array($this->container['document_image_format'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'document_image_format', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -262,6 +324,15 @@ class DocumentImage implements ModelInterface, ArrayAccess
      */
     public function setDocumentImageType($document_image_type)
     {
+        $allowedValues = $this->getDocumentImageTypeAllowableValues();
+        if (!is_null($document_image_type) && !in_array($document_image_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'document_image_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['document_image_type'] = $document_image_type;
 
         return $this;
@@ -286,6 +357,15 @@ class DocumentImage implements ModelInterface, ArrayAccess
      */
     public function setDocumentImageFormat($document_image_format)
     {
+        $allowedValues = $this->getDocumentImageFormatAllowableValues();
+        if (!is_null($document_image_format) && !in_array($document_image_format, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'document_image_format', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['document_image_format'] = $document_image_format;
 
         return $this;

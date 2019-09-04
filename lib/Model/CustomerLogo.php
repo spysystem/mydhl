@@ -163,8 +163,27 @@ class CustomerLogo implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const LOGO_IMAGE_FORMAT_GIF = 'GIF';
+    const LOGO_IMAGE_FORMAT_JPEG = 'JPEG';
+    const LOGO_IMAGE_FORMAT_JPG = 'JPG';
+    const LOGO_IMAGE_FORMAT_PNG = 'PNG';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getLogoImageFormatAllowableValues()
+    {
+        return [
+            self::LOGO_IMAGE_FORMAT_GIF,
+            self::LOGO_IMAGE_FORMAT_JPEG,
+            self::LOGO_IMAGE_FORMAT_JPG,
+            self::LOGO_IMAGE_FORMAT_PNG,
+        ];
+    }
     
 
     /**
@@ -201,6 +220,14 @@ class CustomerLogo implements ModelInterface, ArrayAccess
         if ($this->container['logo_image_format'] === null) {
             $invalidProperties[] = "'logo_image_format' can't be null";
         }
+        $allowedValues = $this->getLogoImageFormatAllowableValues();
+        if (!is_null($this->container['logo_image_format']) && !in_array($this->container['logo_image_format'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'logo_image_format', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -259,6 +286,15 @@ class CustomerLogo implements ModelInterface, ArrayAccess
      */
     public function setLogoImageFormat($logo_image_format)
     {
+        $allowedValues = $this->getLogoImageFormatAllowableValues();
+        if (!in_array($logo_image_format, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'logo_image_format', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['logo_image_format'] = $logo_image_format;
 
         return $this;

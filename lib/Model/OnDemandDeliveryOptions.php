@@ -198,8 +198,25 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const DELIVERY_OPTION_TV = 'TV';
+    const DELIVERY_OPTION_SW = 'SW';
+    const DELIVERY_OPTION_SX = 'SX';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDeliveryOptionAllowableValues()
+    {
+        return [
+            self::DELIVERY_OPTION_TV,
+            self::DELIVERY_OPTION_SW,
+            self::DELIVERY_OPTION_SX,
+        ];
+    }
     
 
     /**
@@ -240,6 +257,14 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
         if ($this->container['delivery_option'] === null) {
             $invalidProperties[] = "'delivery_option' can't be null";
         }
+        $allowedValues = $this->getDeliveryOptionAllowableValues();
+        if (!is_null($this->container['delivery_option']) && !in_array($this->container['delivery_option'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'delivery_option', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -274,6 +299,15 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
      */
     public function setDeliveryOption($delivery_option)
     {
+        $allowedValues = $this->getDeliveryOptionAllowableValues();
+        if (!in_array($delivery_option, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'delivery_option', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['delivery_option'] = $delivery_option;
 
         return $this;

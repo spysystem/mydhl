@@ -168,8 +168,25 @@ class Billing implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const SHIPPING_PAYMENT_TYPE_S = 'S';
+    const SHIPPING_PAYMENT_TYPE_R = 'R';
+    const SHIPPING_PAYMENT_TYPE_T = 'T';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getShippingPaymentTypeAllowableValues()
+    {
+        return [
+            self::SHIPPING_PAYMENT_TYPE_S,
+            self::SHIPPING_PAYMENT_TYPE_R,
+            self::SHIPPING_PAYMENT_TYPE_T,
+        ];
+    }
     
 
     /**
@@ -207,6 +224,14 @@ class Billing implements ModelInterface, ArrayAccess
         if ($this->container['shipping_payment_type'] === null) {
             $invalidProperties[] = "'shipping_payment_type' can't be null";
         }
+        $allowedValues = $this->getShippingPaymentTypeAllowableValues();
+        if (!is_null($this->container['shipping_payment_type']) && !in_array($this->container['shipping_payment_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'shipping_payment_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -265,6 +290,15 @@ class Billing implements ModelInterface, ArrayAccess
      */
     public function setShippingPaymentType($shipping_payment_type)
     {
+        $allowedValues = $this->getShippingPaymentTypeAllowableValues();
+        if (!in_array($shipping_payment_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'shipping_payment_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['shipping_payment_type'] = $shipping_payment_type;
 
         return $this;

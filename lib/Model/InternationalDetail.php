@@ -168,8 +168,23 @@ class InternationalDetail implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const CONTENT_DOCUMENTS = 'DOCUMENTS';
+    const CONTENT_NON_DOCUMENTS = 'NON_DOCUMENTS';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getContentAllowableValues()
+    {
+        return [
+            self::CONTENT_DOCUMENTS,
+            self::CONTENT_NON_DOCUMENTS,
+        ];
+    }
     
 
     /**
@@ -204,6 +219,14 @@ class InternationalDetail implements ModelInterface, ArrayAccess
         if ($this->container['content'] === null) {
             $invalidProperties[] = "'content' can't be null";
         }
+        $allowedValues = $this->getContentAllowableValues();
+        if (!is_null($this->container['content']) && !in_array($this->container['content'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'content', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['commodities'] === null) {
             $invalidProperties[] = "'commodities' can't be null";
         }
@@ -241,6 +264,15 @@ class InternationalDetail implements ModelInterface, ArrayAccess
      */
     public function setContent($content)
     {
+        $allowedValues = $this->getContentAllowableValues();
+        if (!in_array($content, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'content', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['content'] = $content;
 
         return $this;

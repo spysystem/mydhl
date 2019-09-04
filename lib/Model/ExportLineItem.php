@@ -208,8 +208,25 @@ class ExportLineItem implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const EXPORT_REASON_TYPE_PERMANENT = 'PERMANENT';
+    const EXPORT_REASON_TYPE_TEMPORARY = 'TEMPORARY';
+    const EXPORT_REASON_TYPE__RETURN = 'RETURN';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getExportReasonTypeAllowableValues()
+    {
+        return [
+            self::EXPORT_REASON_TYPE_PERMANENT,
+            self::EXPORT_REASON_TYPE_TEMPORARY,
+            self::EXPORT_REASON_TYPE__RETURN,
+        ];
+    }
     
 
     /**
@@ -248,6 +265,14 @@ class ExportLineItem implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getExportReasonTypeAllowableValues();
+        if (!is_null($this->container['export_reason_type']) && !in_array($this->container['export_reason_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'export_reason_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         if ($this->container['item_number'] === null) {
             $invalidProperties[] = "'item_number' can't be null";
@@ -352,6 +377,15 @@ class ExportLineItem implements ModelInterface, ArrayAccess
      */
     public function setExportReasonType($export_reason_type)
     {
+        $allowedValues = $this->getExportReasonTypeAllowableValues();
+        if (!is_null($export_reason_type) && !in_array($export_reason_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'export_reason_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['export_reason_type'] = $export_reason_type;
 
         return $this;

@@ -178,8 +178,21 @@ class ShipmentNotification implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const NOTIFICATION_METHOD_EMAIL = 'EMAIL';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getNotificationMethodAllowableValues()
+    {
+        return [
+            self::NOTIFICATION_METHOD_EMAIL,
+        ];
+    }
     
 
     /**
@@ -216,6 +229,14 @@ class ShipmentNotification implements ModelInterface, ArrayAccess
         if ($this->container['notification_method'] === null) {
             $invalidProperties[] = "'notification_method' can't be null";
         }
+        $allowedValues = $this->getNotificationMethodAllowableValues();
+        if (!is_null($this->container['notification_method']) && !in_array($this->container['notification_method'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'notification_method', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -250,6 +271,15 @@ class ShipmentNotification implements ModelInterface, ArrayAccess
      */
     public function setNotificationMethod($notification_method)
     {
+        $allowedValues = $this->getNotificationMethodAllowableValues();
+        if (!in_array($notification_method, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'notification_method', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['notification_method'] = $notification_method;
 
         return $this;

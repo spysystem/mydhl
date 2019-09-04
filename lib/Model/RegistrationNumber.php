@@ -168,8 +168,49 @@ class RegistrationNumber implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const NUMBER_TYPE_CODE_VAT = 'VAT';
+    const NUMBER_TYPE_CODE_EIN = 'EIN';
+    const NUMBER_TYPE_CODE_GST = 'GST';
+    const NUMBER_TYPE_CODE_SSN = 'SSN';
+    const NUMBER_TYPE_CODE_EOR = 'EOR';
+    const NUMBER_TYPE_CODE_DUN = 'DUN';
+    const NUMBER_TYPE_CODE_FED = 'FED';
+    const NUMBER_TYPE_CODE_STA = 'STA';
+    const NUMBER_TYPE_CODE_CNP = 'CNP';
+    const NUMBER_TYPE_CODE_IE = 'IE';
+    const NUMBER_TYPE_CODE_INN = 'INN';
+    const NUMBER_TYPE_CODE_KPP = 'KPP';
+    const NUMBER_TYPE_CODE_OGR = 'OGR';
+    const NUMBER_TYPE_CODE_OKP = 'OKP';
+    const NUMBER_TYPE_CODE_MRN = 'MRN';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getNumberTypeCodeAllowableValues()
+    {
+        return [
+            self::NUMBER_TYPE_CODE_VAT,
+            self::NUMBER_TYPE_CODE_EIN,
+            self::NUMBER_TYPE_CODE_GST,
+            self::NUMBER_TYPE_CODE_SSN,
+            self::NUMBER_TYPE_CODE_EOR,
+            self::NUMBER_TYPE_CODE_DUN,
+            self::NUMBER_TYPE_CODE_FED,
+            self::NUMBER_TYPE_CODE_STA,
+            self::NUMBER_TYPE_CODE_CNP,
+            self::NUMBER_TYPE_CODE_IE,
+            self::NUMBER_TYPE_CODE_INN,
+            self::NUMBER_TYPE_CODE_KPP,
+            self::NUMBER_TYPE_CODE_OGR,
+            self::NUMBER_TYPE_CODE_OKP,
+            self::NUMBER_TYPE_CODE_MRN,
+        ];
+    }
     
 
     /**
@@ -207,6 +248,14 @@ class RegistrationNumber implements ModelInterface, ArrayAccess
         if ($this->container['number_type_code'] === null) {
             $invalidProperties[] = "'number_type_code' can't be null";
         }
+        $allowedValues = $this->getNumberTypeCodeAllowableValues();
+        if (!is_null($this->container['number_type_code']) && !in_array($this->container['number_type_code'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'number_type_code', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['number_issuer_country_code'] === null) {
             $invalidProperties[] = "'number_issuer_country_code' can't be null";
         }
@@ -268,6 +317,15 @@ class RegistrationNumber implements ModelInterface, ArrayAccess
      */
     public function setNumberTypeCode($number_type_code)
     {
+        $allowedValues = $this->getNumberTypeCodeAllowableValues();
+        if (!in_array($number_type_code, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'number_type_code', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['number_type_code'] = $number_type_code;
 
         return $this;

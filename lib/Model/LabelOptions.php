@@ -198,8 +198,108 @@ class LabelOptions implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const REQUEST_DHL_CUSTOMS_INVOICE_Y = 'Y';
+    const REQUEST_DHL_CUSTOMS_INVOICE_N = 'N';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_ENG = 'eng';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_BUL = 'bul';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_CZE = 'cze';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_DAN = 'dan';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_GER = 'ger';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_GRE = 'gre';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_EST = 'est';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_FIN = 'fin';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_FRE = 'fre';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_HUN = 'hun';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_ICE = 'ice';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_ITA = 'ita';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_LIT = 'lit';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_LAV = 'lav';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_DUT = 'dut';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_NNO = 'nno';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_POL = 'pol';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_POR = 'por';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_RUM = 'rum';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_SLV = 'slv';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_SLP = 'slp';
+    const DHL_CUSTOMS_INVOICE_LANGUAGE_SPA = 'spa';
+    const DHL_CUSTOMS_INVOICE_TYPE_COMMERCIAL_INVOICE = 'COMMERCIAL_INVOICE';
+    const DHL_CUSTOMS_INVOICE_TYPE_PROFORMA_INVOICE = 'PROFORMA_INVOICE';
+    const REQUEST_SHIPMENT_RECEIPT_Y = 'Y';
+    const REQUEST_SHIPMENT_RECEIPT_N = 'N';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRequestDhlCustomsInvoiceAllowableValues()
+    {
+        return [
+            self::REQUEST_DHL_CUSTOMS_INVOICE_Y,
+            self::REQUEST_DHL_CUSTOMS_INVOICE_N,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDhlCustomsInvoiceLanguageAllowableValues()
+    {
+        return [
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_ENG,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_BUL,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_CZE,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_DAN,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_GER,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_GRE,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_EST,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_FIN,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_FRE,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_HUN,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_ICE,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_ITA,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_LIT,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_LAV,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_DUT,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_NNO,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_POL,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_POR,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_RUM,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_SLV,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_SLP,
+            self::DHL_CUSTOMS_INVOICE_LANGUAGE_SPA,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDhlCustomsInvoiceTypeAllowableValues()
+    {
+        return [
+            self::DHL_CUSTOMS_INVOICE_TYPE_COMMERCIAL_INVOICE,
+            self::DHL_CUSTOMS_INVOICE_TYPE_PROFORMA_INVOICE,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRequestShipmentReceiptAllowableValues()
+    {
+        return [
+            self::REQUEST_SHIPMENT_RECEIPT_Y,
+            self::REQUEST_SHIPMENT_RECEIPT_N,
+        ];
+    }
     
 
     /**
@@ -236,6 +336,38 @@ class LabelOptions implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getRequestDhlCustomsInvoiceAllowableValues();
+        if (!is_null($this->container['request_dhl_customs_invoice']) && !in_array($this->container['request_dhl_customs_invoice'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'request_dhl_customs_invoice', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getDhlCustomsInvoiceLanguageAllowableValues();
+        if (!is_null($this->container['dhl_customs_invoice_language']) && !in_array($this->container['dhl_customs_invoice_language'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'dhl_customs_invoice_language', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getDhlCustomsInvoiceTypeAllowableValues();
+        if (!is_null($this->container['dhl_customs_invoice_type']) && !in_array($this->container['dhl_customs_invoice_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'dhl_customs_invoice_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getRequestShipmentReceiptAllowableValues();
+        if (!is_null($this->container['request_shipment_receipt']) && !in_array($this->container['request_shipment_receipt'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'request_shipment_receipt', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -367,6 +499,15 @@ class LabelOptions implements ModelInterface, ArrayAccess
      */
     public function setRequestDhlCustomsInvoice($request_dhl_customs_invoice)
     {
+        $allowedValues = $this->getRequestDhlCustomsInvoiceAllowableValues();
+        if (!is_null($request_dhl_customs_invoice) && !in_array($request_dhl_customs_invoice, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'request_dhl_customs_invoice', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['request_dhl_customs_invoice'] = $request_dhl_customs_invoice;
 
         return $this;
@@ -391,6 +532,15 @@ class LabelOptions implements ModelInterface, ArrayAccess
      */
     public function setDhlCustomsInvoiceLanguage($dhl_customs_invoice_language)
     {
+        $allowedValues = $this->getDhlCustomsInvoiceLanguageAllowableValues();
+        if (!is_null($dhl_customs_invoice_language) && !in_array($dhl_customs_invoice_language, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'dhl_customs_invoice_language', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['dhl_customs_invoice_language'] = $dhl_customs_invoice_language;
 
         return $this;
@@ -415,6 +565,15 @@ class LabelOptions implements ModelInterface, ArrayAccess
      */
     public function setDhlCustomsInvoiceType($dhl_customs_invoice_type)
     {
+        $allowedValues = $this->getDhlCustomsInvoiceTypeAllowableValues();
+        if (!is_null($dhl_customs_invoice_type) && !in_array($dhl_customs_invoice_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'dhl_customs_invoice_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['dhl_customs_invoice_type'] = $dhl_customs_invoice_type;
 
         return $this;
@@ -439,6 +598,15 @@ class LabelOptions implements ModelInterface, ArrayAccess
      */
     public function setRequestShipmentReceipt($request_shipment_receipt)
     {
+        $allowedValues = $this->getRequestShipmentReceiptAllowableValues();
+        if (!is_null($request_shipment_receipt) && !in_array($request_shipment_receipt, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'request_shipment_receipt', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['request_shipment_receipt'] = $request_shipment_receipt;
 
         return $this;
