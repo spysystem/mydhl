@@ -22,23 +22,15 @@ security:
   - BasicAuth: []
 
 tags:
-  - name: ShipmentRequest
-    description: Shipment Request
-  - name: DeleteShipment
-    description: Shipment Delete
-  - name: TrackingRequest
-    description: Tracking Request
-  - name: UpdateShipment
-    description: Shipment Update
-  - name: RequestPickup
-    description: Pickup Request
+  - name: DHLClient
+    description: DHL Client
 
+#region Endpoints
 paths:
-#region ShipmentRequestRequest
   /ShipmentRequest:
     post:
       tags:
-        - ShipmentRequest
+        - DHLClient
       operationId: requestShipment
       summary: Create a Shipment
       parameters:
@@ -54,7 +46,28 @@ paths:
             $ref: '#/definitions/ShipmentRequestResponse'
         401:
           $ref: '#/responses/Unauthorized'
-#endregion ShipmentRequest
+
+  /RateRequest:
+    post:
+      tags:
+        - DHLClient
+      operationId: requestRate
+      summary: Requests a Shipment Rate
+      parameters:
+      - name: data
+        in: body
+        description: Rate Request Data
+        schema:
+          $ref: '#/definitions/RateRequestRequest'
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/RateResponseResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+#endregion
+
 
 responses:
   Unauthorized:
@@ -63,6 +76,7 @@ responses:
       $ref: '#/definitions/401Response'
 
 definitions:
+
 
 #region ShipmentRequestRequest
   Dimensions:
@@ -108,6 +122,8 @@ definitions:
       PhoneNumber:
         type: string
       EmailAddress:
+        type: string
+      MobilePhoneNumber:
         type: string
 
   Address:
@@ -228,12 +244,14 @@ definitions:
       BillingAccountNumber:
         type: string
 
-  Service:
+  SpecialService:
     type: object
     required:
       - ServiceType
     properties:
       ServiceType:
+        type: string
+      LocalServiceType:
         type: string
       ServiceValue:
         type: number
@@ -248,7 +266,7 @@ definitions:
       Service:
         type: array
         items:
-          $ref: '#/definitions/Service'
+          $ref: '#/definitions/SpecialService'
 
   CustomerLogo:
     type: object
@@ -747,9 +765,25 @@ definitions:
       - ChargeType
       - ChargeAmount
     properties:
+      ChargeCode:
+        type: string
+      LocalChargeCode:
+        type: string
       ChargeType:
         type: string
       ChargeAmount:
+        type: string
+      ChargeName:
+        type: string
+      ChargeCurrencyCode:
+        type: string
+      ChargeCodeTypeCode:
+        type: string
+      BillingServiceInd:
+        type: string
+      CustomerAggreementInd:
+        type: string
+      MarketedServiceInd:
         type: string
 
   Charges:
@@ -757,6 +791,10 @@ definitions:
     required:
       - Charge
     properties:
+      '@type':
+        type: string
+      Currency:
+        type: string
       Charge:
         type: array
         items:
@@ -906,6 +944,332 @@ definitions:
         $ref: '#/definitions/AdditionalInformation'
 #endregion
 
+#region RateRequestRequest
+  RateRequestStakeHolder:
+    type: object
+    required:
+      - City
+      - PostalCode
+      - CountryCode
+    properties:
+      StreetLines:
+        type: string
+      StreetName:
+        type: string
+      StreetNumber:
+        type: string
+      StreetLines2:
+        type: string
+      StreetLines3:
+        type: string
+      City:
+        type: string
+      CityDistrict:
+        type: string
+      StateOrProvinceCode:
+        type: string
+      PostalCode:
+        type: string
+      CountryCode:
+        type: string
+      Contact:
+        $ref: '#/definitions/Contact'
+
+  RateRequestShip:
+    type: object
+    required:
+      - Shipper
+      - Recipient
+    properties:
+      Shipper:
+        $ref: '#/definitions/RateRequestStakeHolder'
+      Recipient:
+        $ref: '#/definitions/RateRequestStakeHolder'
+
+  Weight:
+    type: object
+    required:
+      - Value
+    properties:
+      Value:
+        type: number
+
+  RateRequestRequestedPackage:
+    type: object
+    required:
+      - '@number'
+      - Weight
+      - Dimensions
+    properties:
+      '@number':
+        type: integer
+      PackageTypeCode:
+        type: string
+      Weight:
+        $ref: '#/definitions/Weight'
+      Dimensions:
+        $ref: '#/definitions/Dimensions'
+
+  RateRequestPackages:
+    type: object
+    required:
+      - RequestedPackages
+    properties:
+      RequestedPackages:
+        type: array
+        items:
+          $ref: '#/definitions/RateRequestRequestedPackage'
+
+  RateRequestRequestedShipment:
+    type: object
+    required:
+      - DropOffType
+      - ShipTimestamp
+      - UnitOfMeasurement
+      - Ship
+      - Packages
+    properties:
+      GetRateEstimates:
+        type: string
+        enum:
+          - Y
+          - N
+      GetDetailedRateBreakdown:
+        type: string
+        enum:
+          - Y
+          - N
+      IncludeAdditionalCurrencies:
+        type: string
+        enum:
+          - Y
+          - N
+      DropOffType:
+        type: string
+        enum:
+          - REGULAR_PICKUP
+          - REQUEST_COURIER
+      NextBusinessDay:
+        type: string
+        enum:
+          - Y
+          - N
+      ShipTimestamp:
+        type: string
+      PickupLocationCloseTime:
+        type: string
+      UnitOfMeasurement:
+        type: string
+        enum:
+          - SI
+          - SU
+      Content:
+        type: string
+        enum:
+          - DOCUMENTS
+          - NON_DOCUMENTS
+      DeclaredValue:
+        type: number
+      DeclaredValueCurrecyCode:
+        type: string
+      PaymentInfo:
+        type: string
+      Account:
+        type: string
+      PayerCountryCode:
+        type: string
+      RequestValueAddedService:
+        type: string
+        enum:
+          - Y
+          - N
+      ServiceType:
+        type: string
+      NetworkTypeCode:
+        type: string
+        enum:
+          - AL
+          - DD
+          - TD
+      CustomerAggrementInd:
+        type: string
+        enum:
+          - Y
+          - N
+      ValidateReadyTime:
+        type: string
+        enum:
+          - Y
+          - N
+      Ship:
+        $ref: '#/definitions/RateRequestShip'
+      Packages:
+        $ref: '#/definitions/RateRequestPackages'
+      Billing:
+        $ref: '#/definitions/Billing'
+      SpecialServices:
+        $ref: '#/definitions/SpecialServices'
+  Request:
+    type: object
+    properties:
+      ServiceHeader:
+        $ref: '#/definitions/ServiceHeader'
+
+  RateRequest:
+    type: object
+    required:
+      - RequestedShipment
+    properties:
+      Request:
+        $ref: '#/definitions/Request'
+      RequestedShipment:
+        $ref: '#/definitions/RateRequestRequestedShipment'
+
+  RateRequestRequest:
+    type: object
+    required:
+      - RateRequest
+    properties:
+      RateRequest:
+        $ref: '#/definitions/RateRequest'
+#endregion
+
+#region RateRequestResponse
+
+  TotalChargeType:
+    type: object
+    properties:
+      Type:
+        type: string
+      Amount:
+        type: number
+
+  TotalChargeTypes:
+    type: object
+    properties:
+      '@type':
+        type: string
+      Currency:
+        type: string
+      TotalChargeType:
+        type: array
+        items:
+           $ref: '#/definitions/TotalChargeType'
+
+
+  RateRequestTotalNet:
+    type: object
+    properties:
+      Currency:
+        type: string
+      Amount:
+        type: number
+      '@type':
+        type: string
+
+  Service:
+    type: object
+    properties:
+      '@type':
+        type: string
+      DeliveryTime:
+        type: string
+      DeliveryType:
+        type: string
+      CutoffTime:
+        type: string
+      CutoffTimeGMT:
+        type: string
+      CutoffTimeOffset:
+        type: string
+      NextBusinessDayInd:
+        type: string
+        enum:
+          - Y
+          - N
+      PickupWindowEarliestTime:
+        type: string
+      PickupWindowLatestTime:
+        type: string
+      ServiceName:
+        type: string
+      LocalServiceType:
+        type: string
+      LocalServiceCountryCode:
+        type: string
+      NetworkTypeCode:
+        type: string
+      CustomerAggreementInd:
+        type: string
+      TotalTransitDays:
+        type: integer
+      PickupAdditionalDates:
+        type: integer
+      DeliveryAdditionalDays:
+        type: integer
+      VolumetricWeight:
+        type: number
+      QuotedWeight:
+        type: number
+      UnitOfMeasurement:
+        type: string
+        enum:
+          - SI
+          - SU
+      PickupDayOfWeek:
+        type: string
+      DestinationDayOfWeek:
+        type: string
+      PricingDate:
+        type: string
+      OriginServiceArea:
+        $ref: '#/definitions/ServiceArea'
+      DestinationServiceArea:
+        $ref: '#/definitions/ServiceArea'
+      TotalNet:
+        type: array
+        items:
+          $ref: '#/definitions/RateRequestTotalNet'
+      Charges:
+        $ref: '#/definitions/Charges'
+      TotalChargeTypes:
+        type: array
+        items:
+          $ref: '#/definitions/TotalChargeTypes'
+
+  Provider:
+    type: object
+    properties:
+      '@code':
+        type: string
+      ServiceHeader:
+        $ref: '#/definitions/ServiceHeader'
+      Notification:
+        type: array
+        items:
+          $ref: '#/definitions/Notification'
+      Service:
+        type: array
+        items:
+          $ref: '#/definitions/Service'
+
+  RateResponse:
+    type: object
+    properties:
+      Provider:
+        $ref: '#/definitions/Provider'
+
+
+  RateResponseResponse:
+    type: object
+    required:
+      - RateResponse
+    properties:
+      RateResponse:
+        $ref: '#/definitions/RateResponse'
+#endregion
+
+#region Stock Responses
   Reason:
     type: object
     properties:
@@ -930,3 +1294,4 @@ definitions:
         $ref: '#/definitions/ReasonArray'
       details:
         $ref: '#/definitions/Details'
+#endregion
