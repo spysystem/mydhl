@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact
+ * RateResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \MyDHL\ObjectSerializer;
 
 /**
- * Contact Class Doc Comment
+ * RateResponse Class Doc Comment
  *
  * @category Class
  * @package  MyDHL
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Contact implements ModelInterface, ArrayAccess
+class RateResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Contact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Contact';
+    protected static $openAPIModelName = 'RateResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,7 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_name' => 'string',
-        'company_name' => 'string',
-        'phone_number' => 'string',
-        'email_address' => 'string',
-        'mobile_phone_number' => 'string'
+        'provider' => '\MyDHL\Model\Provider'
     ];
 
     /**
@@ -70,11 +66,7 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'person_name' => null,
-        'company_name' => null,
-        'phone_number' => null,
-        'email_address' => null,
-        'mobile_phone_number' => null
+        'provider' => null
     ];
 
     /**
@@ -104,11 +96,7 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_name' => 'PersonName',
-        'company_name' => 'CompanyName',
-        'phone_number' => 'PhoneNumber',
-        'email_address' => 'EmailAddress',
-        'mobile_phone_number' => 'MobilePhoneNumber'
+        'provider' => 'Provider'
     ];
 
     /**
@@ -117,11 +105,7 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'person_name' => 'setPersonName',
-        'company_name' => 'setCompanyName',
-        'phone_number' => 'setPhoneNumber',
-        'email_address' => 'setEmailAddress',
-        'mobile_phone_number' => 'setMobilePhoneNumber'
+        'provider' => 'setProvider'
     ];
 
     /**
@@ -130,11 +114,7 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'person_name' => 'getPersonName',
-        'company_name' => 'getCompanyName',
-        'phone_number' => 'getPhoneNumber',
-        'email_address' => 'getEmailAddress',
-        'mobile_phone_number' => 'getMobilePhoneNumber'
+        'provider' => 'getProvider'
     ];
 
     /**
@@ -197,11 +177,7 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_name'] = isset($data['person_name']) ? $data['person_name'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
-        $this->container['mobile_phone_number'] = isset($data['mobile_phone_number']) ? $data['mobile_phone_number'] : null;
+        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
     }
 
     /**
@@ -213,12 +189,6 @@ class Contact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['person_name'] === null) {
-            $invalidProperties[] = "'person_name' can't be null";
-        }
-        if ($this->container['company_name'] === null) {
-            $invalidProperties[] = "'company_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -235,121 +205,25 @@ class Contact implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets person_name
+     * Gets provider
      *
-     * @return string
+     * @return \MyDHL\Model\Provider|null
      */
-    public function getPersonName()
+    public function getProvider()
     {
-        return $this->container['person_name'];
+        return $this->container['provider'];
     }
 
     /**
-     * Sets person_name
+     * Sets provider
      *
-     * @param string $person_name person_name
+     * @param \MyDHL\Model\Provider|null $provider provider
      *
      * @return $this
      */
-    public function setPersonName($person_name)
+    public function setProvider($provider)
     {
-        $this->container['person_name'] = $person_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_name
-     *
-     * @return string
-     */
-    public function getCompanyName()
-    {
-        return $this->container['company_name'];
-    }
-
-    /**
-     * Sets company_name
-     *
-     * @param string $company_name company_name
-     *
-     * @return $this
-     */
-    public function setCompanyName($company_name)
-    {
-        $this->container['company_name'] = $company_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
-     *
-     * @return string|null
-     */
-    public function getPhoneNumber()
-    {
-        return $this->container['phone_number'];
-    }
-
-    /**
-     * Sets phone_number
-     *
-     * @param string|null $phone_number phone_number
-     *
-     * @return $this
-     */
-    public function setPhoneNumber($phone_number)
-    {
-        $this->container['phone_number'] = $phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets email_address
-     *
-     * @return string|null
-     */
-    public function getEmailAddress()
-    {
-        return $this->container['email_address'];
-    }
-
-    /**
-     * Sets email_address
-     *
-     * @param string|null $email_address email_address
-     *
-     * @return $this
-     */
-    public function setEmailAddress($email_address)
-    {
-        $this->container['email_address'] = $email_address;
-
-        return $this;
-    }
-
-    /**
-     * Gets mobile_phone_number
-     *
-     * @return string|null
-     */
-    public function getMobilePhoneNumber()
-    {
-        return $this->container['mobile_phone_number'];
-    }
-
-    /**
-     * Sets mobile_phone_number
-     *
-     * @param string|null $mobile_phone_number mobile_phone_number
-     *
-     * @return $this
-     */
-    public function setMobilePhoneNumber($mobile_phone_number)
-    {
-        $this->container['mobile_phone_number'] = $mobile_phone_number;
+        $this->container['provider'] = $provider;
 
         return $this;
     }

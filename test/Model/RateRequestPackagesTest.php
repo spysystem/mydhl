@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactTest
+ * RateRequestPackagesTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace MyDHL;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ContactTest Class Doc Comment
+ * RateRequestPackagesTest Class Doc Comment
  *
  * @category    Class
- * @description Contact
+ * @description RateRequestPackages
  * @package     MyDHL
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ContactTest extends TestCase
+class RateRequestPackagesTest extends TestCase
 {
 
     /**
@@ -72,44 +72,16 @@ class ContactTest extends TestCase
     }
 
     /**
-     * Test "Contact"
+     * Test "RateRequestPackages"
      */
-    public function testContact()
+    public function testRateRequestPackages()
     {
     }
 
     /**
-     * Test attribute "person_name"
+     * Test attribute "requested_packages"
      */
-    public function testPropertyPersonName()
-    {
-    }
-
-    /**
-     * Test attribute "company_name"
-     */
-    public function testPropertyCompanyName()
-    {
-    }
-
-    /**
-     * Test attribute "phone_number"
-     */
-    public function testPropertyPhoneNumber()
-    {
-    }
-
-    /**
-     * Test attribute "email_address"
-     */
-    public function testPropertyEmailAddress()
-    {
-    }
-
-    /**
-     * Test attribute "mobile_phone_number"
-     */
-    public function testPropertyMobilePhoneNumber()
+    public function testPropertyRequestedPackages()
     {
     }
 }

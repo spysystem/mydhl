@@ -1,14 +1,13 @@
-# # Contact
+# # RateRequestRequestedPackage
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**person_name** | **string** |  | 
-**company_name** | **string** |  | 
-**phone_number** | **string** |  | [optional] 
-**email_address** | **string** |  | [optional] 
-**mobile_phone_number** | **string** |  | [optional] 
+**number** | **int** |  | 
+**package_type_code** | **string** |  | [optional] 
+**weight** | [**\MyDHL\Model\Weight**](Weight.md) |  | 
+**dimensions** | [**\MyDHL\Model\Dimensions**](Dimensions.md) |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

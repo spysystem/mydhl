@@ -57,7 +57,7 @@ class SpecialServices implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'service' => '\MyDHL\Model\Service[]'
+        'service' => '\MyDHL\Model\SpecialService[]'
     ];
 
     /**
@@ -207,7 +207,7 @@ class SpecialServices implements ModelInterface, ArrayAccess
     /**
      * Gets service
      *
-     * @return \MyDHL\Model\Service[]|null
+     * @return \MyDHL\Model\SpecialService[]|null
      */
     public function getService()
     {
@@ -217,7 +217,7 @@ class SpecialServices implements ModelInterface, ArrayAccess
     /**
      * Sets service
      *
-     * @param \MyDHL\Model\Service[]|null $service service
+     * @param \MyDHL\Model\SpecialService[]|null $service service
      *
      * @return $this
      */

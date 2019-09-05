@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact
+ * RateRequestRequestedPackage
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \MyDHL\ObjectSerializer;
 
 /**
- * Contact Class Doc Comment
+ * RateRequestRequestedPackage Class Doc Comment
  *
  * @category Class
  * @package  MyDHL
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Contact implements ModelInterface, ArrayAccess
+class RateRequestRequestedPackage implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Contact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Contact';
+    protected static $openAPIModelName = 'RateRequestRequestedPackage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,10 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_name' => 'string',
-        'company_name' => 'string',
-        'phone_number' => 'string',
-        'email_address' => 'string',
-        'mobile_phone_number' => 'string'
+        'number' => 'int',
+        'package_type_code' => 'string',
+        'weight' => '\MyDHL\Model\Weight',
+        'dimensions' => '\MyDHL\Model\Dimensions'
     ];
 
     /**
@@ -70,11 +69,10 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'person_name' => null,
-        'company_name' => null,
-        'phone_number' => null,
-        'email_address' => null,
-        'mobile_phone_number' => null
+        'number' => null,
+        'package_type_code' => null,
+        'weight' => null,
+        'dimensions' => null
     ];
 
     /**
@@ -104,11 +102,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_name' => 'PersonName',
-        'company_name' => 'CompanyName',
-        'phone_number' => 'PhoneNumber',
-        'email_address' => 'EmailAddress',
-        'mobile_phone_number' => 'MobilePhoneNumber'
+        'number' => '@number',
+        'package_type_code' => 'PackageTypeCode',
+        'weight' => 'Weight',
+        'dimensions' => 'Dimensions'
     ];
 
     /**
@@ -117,11 +114,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'person_name' => 'setPersonName',
-        'company_name' => 'setCompanyName',
-        'phone_number' => 'setPhoneNumber',
-        'email_address' => 'setEmailAddress',
-        'mobile_phone_number' => 'setMobilePhoneNumber'
+        'number' => 'setNumber',
+        'package_type_code' => 'setPackageTypeCode',
+        'weight' => 'setWeight',
+        'dimensions' => 'setDimensions'
     ];
 
     /**
@@ -130,11 +126,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'person_name' => 'getPersonName',
-        'company_name' => 'getCompanyName',
-        'phone_number' => 'getPhoneNumber',
-        'email_address' => 'getEmailAddress',
-        'mobile_phone_number' => 'getMobilePhoneNumber'
+        'number' => 'getNumber',
+        'package_type_code' => 'getPackageTypeCode',
+        'weight' => 'getWeight',
+        'dimensions' => 'getDimensions'
     ];
 
     /**
@@ -197,11 +192,10 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_name'] = isset($data['person_name']) ? $data['person_name'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
-        $this->container['mobile_phone_number'] = isset($data['mobile_phone_number']) ? $data['mobile_phone_number'] : null;
+        $this->container['number'] = isset($data['number']) ? $data['number'] : null;
+        $this->container['package_type_code'] = isset($data['package_type_code']) ? $data['package_type_code'] : null;
+        $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
+        $this->container['dimensions'] = isset($data['dimensions']) ? $data['dimensions'] : null;
     }
 
     /**
@@ -213,11 +207,14 @@ class Contact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['person_name'] === null) {
-            $invalidProperties[] = "'person_name' can't be null";
+        if ($this->container['number'] === null) {
+            $invalidProperties[] = "'number' can't be null";
         }
-        if ($this->container['company_name'] === null) {
-            $invalidProperties[] = "'company_name' can't be null";
+        if ($this->container['weight'] === null) {
+            $invalidProperties[] = "'weight' can't be null";
+        }
+        if ($this->container['dimensions'] === null) {
+            $invalidProperties[] = "'dimensions' can't be null";
         }
         return $invalidProperties;
     }
@@ -235,121 +232,97 @@ class Contact implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets person_name
+     * Gets number
      *
-     * @return string
+     * @return int
      */
-    public function getPersonName()
+    public function getNumber()
     {
-        return $this->container['person_name'];
+        return $this->container['number'];
     }
 
     /**
-     * Sets person_name
+     * Sets number
      *
-     * @param string $person_name person_name
+     * @param int $number number
      *
      * @return $this
      */
-    public function setPersonName($person_name)
+    public function setNumber($number)
     {
-        $this->container['person_name'] = $person_name;
+        $this->container['number'] = $number;
 
         return $this;
     }
 
     /**
-     * Gets company_name
-     *
-     * @return string
-     */
-    public function getCompanyName()
-    {
-        return $this->container['company_name'];
-    }
-
-    /**
-     * Sets company_name
-     *
-     * @param string $company_name company_name
-     *
-     * @return $this
-     */
-    public function setCompanyName($company_name)
-    {
-        $this->container['company_name'] = $company_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
+     * Gets package_type_code
      *
      * @return string|null
      */
-    public function getPhoneNumber()
+    public function getPackageTypeCode()
     {
-        return $this->container['phone_number'];
+        return $this->container['package_type_code'];
     }
 
     /**
-     * Sets phone_number
+     * Sets package_type_code
      *
-     * @param string|null $phone_number phone_number
+     * @param string|null $package_type_code package_type_code
      *
      * @return $this
      */
-    public function setPhoneNumber($phone_number)
+    public function setPackageTypeCode($package_type_code)
     {
-        $this->container['phone_number'] = $phone_number;
+        $this->container['package_type_code'] = $package_type_code;
 
         return $this;
     }
 
     /**
-     * Gets email_address
+     * Gets weight
      *
-     * @return string|null
+     * @return \MyDHL\Model\Weight
      */
-    public function getEmailAddress()
+    public function getWeight()
     {
-        return $this->container['email_address'];
+        return $this->container['weight'];
     }
 
     /**
-     * Sets email_address
+     * Sets weight
      *
-     * @param string|null $email_address email_address
+     * @param \MyDHL\Model\Weight $weight weight
      *
      * @return $this
      */
-    public function setEmailAddress($email_address)
+    public function setWeight($weight)
     {
-        $this->container['email_address'] = $email_address;
+        $this->container['weight'] = $weight;
 
         return $this;
     }
 
     /**
-     * Gets mobile_phone_number
+     * Gets dimensions
      *
-     * @return string|null
+     * @return \MyDHL\Model\Dimensions
      */
-    public function getMobilePhoneNumber()
+    public function getDimensions()
     {
-        return $this->container['mobile_phone_number'];
+        return $this->container['dimensions'];
     }
 
     /**
-     * Sets mobile_phone_number
+     * Sets dimensions
      *
-     * @param string|null $mobile_phone_number mobile_phone_number
+     * @param \MyDHL\Model\Dimensions $dimensions dimensions
      *
      * @return $this
      */
-    public function setMobilePhoneNumber($mobile_phone_number)
+    public function setDimensions($dimensions)
     {
-        $this->container['mobile_phone_number'] = $mobile_phone_number;
+        $this->container['dimensions'] = $dimensions;
 
         return $this;
     }

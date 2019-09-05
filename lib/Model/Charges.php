@@ -57,6 +57,8 @@ class Charges implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'type' => 'string',
+        'currency' => 'string',
         'charge' => '\MyDHL\Model\Charge[]'
     ];
 
@@ -66,6 +68,8 @@ class Charges implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'type' => null,
+        'currency' => null,
         'charge' => null
     ];
 
@@ -96,6 +100,8 @@ class Charges implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'type' => '@type',
+        'currency' => 'Currency',
         'charge' => 'Charge'
     ];
 
@@ -105,6 +111,8 @@ class Charges implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'type' => 'setType',
+        'currency' => 'setCurrency',
         'charge' => 'setCharge'
     ];
 
@@ -114,6 +122,8 @@ class Charges implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'type' => 'getType',
+        'currency' => 'getCurrency',
         'charge' => 'getCharge'
     ];
 
@@ -177,6 +187,8 @@ class Charges implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['charge'] = isset($data['charge']) ? $data['charge'] : null;
     }
 
@@ -206,6 +218,54 @@ class Charges implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string|null $currency currency
+     *
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
 
     /**
      * Gets charge

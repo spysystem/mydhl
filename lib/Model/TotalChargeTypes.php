@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact
+ * TotalChargeTypes
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \MyDHL\ObjectSerializer;
 
 /**
- * Contact Class Doc Comment
+ * TotalChargeTypes Class Doc Comment
  *
  * @category Class
  * @package  MyDHL
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Contact implements ModelInterface, ArrayAccess
+class TotalChargeTypes implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Contact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Contact';
+    protected static $openAPIModelName = 'TotalChargeTypes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,9 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_name' => 'string',
-        'company_name' => 'string',
-        'phone_number' => 'string',
-        'email_address' => 'string',
-        'mobile_phone_number' => 'string'
+        'type' => 'string',
+        'currency' => 'string',
+        'total_charge_type' => '\MyDHL\Model\TotalChargeType[]'
     ];
 
     /**
@@ -70,11 +68,9 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'person_name' => null,
-        'company_name' => null,
-        'phone_number' => null,
-        'email_address' => null,
-        'mobile_phone_number' => null
+        'type' => null,
+        'currency' => null,
+        'total_charge_type' => null
     ];
 
     /**
@@ -104,11 +100,9 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_name' => 'PersonName',
-        'company_name' => 'CompanyName',
-        'phone_number' => 'PhoneNumber',
-        'email_address' => 'EmailAddress',
-        'mobile_phone_number' => 'MobilePhoneNumber'
+        'type' => '@type',
+        'currency' => 'Currency',
+        'total_charge_type' => 'TotalChargeType'
     ];
 
     /**
@@ -117,11 +111,9 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'person_name' => 'setPersonName',
-        'company_name' => 'setCompanyName',
-        'phone_number' => 'setPhoneNumber',
-        'email_address' => 'setEmailAddress',
-        'mobile_phone_number' => 'setMobilePhoneNumber'
+        'type' => 'setType',
+        'currency' => 'setCurrency',
+        'total_charge_type' => 'setTotalChargeType'
     ];
 
     /**
@@ -130,11 +122,9 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'person_name' => 'getPersonName',
-        'company_name' => 'getCompanyName',
-        'phone_number' => 'getPhoneNumber',
-        'email_address' => 'getEmailAddress',
-        'mobile_phone_number' => 'getMobilePhoneNumber'
+        'type' => 'getType',
+        'currency' => 'getCurrency',
+        'total_charge_type' => 'getTotalChargeType'
     ];
 
     /**
@@ -197,11 +187,9 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_name'] = isset($data['person_name']) ? $data['person_name'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
-        $this->container['mobile_phone_number'] = isset($data['mobile_phone_number']) ? $data['mobile_phone_number'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['total_charge_type'] = isset($data['total_charge_type']) ? $data['total_charge_type'] : null;
     }
 
     /**
@@ -213,12 +201,6 @@ class Contact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['person_name'] === null) {
-            $invalidProperties[] = "'person_name' can't be null";
-        }
-        if ($this->container['company_name'] === null) {
-            $invalidProperties[] = "'company_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -235,121 +217,73 @@ class Contact implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets person_name
-     *
-     * @return string
-     */
-    public function getPersonName()
-    {
-        return $this->container['person_name'];
-    }
-
-    /**
-     * Sets person_name
-     *
-     * @param string $person_name person_name
-     *
-     * @return $this
-     */
-    public function setPersonName($person_name)
-    {
-        $this->container['person_name'] = $person_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_name
-     *
-     * @return string
-     */
-    public function getCompanyName()
-    {
-        return $this->container['company_name'];
-    }
-
-    /**
-     * Sets company_name
-     *
-     * @param string $company_name company_name
-     *
-     * @return $this
-     */
-    public function setCompanyName($company_name)
-    {
-        $this->container['company_name'] = $company_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
+     * Gets type
      *
      * @return string|null
      */
-    public function getPhoneNumber()
+    public function getType()
     {
-        return $this->container['phone_number'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets phone_number
+     * Sets type
      *
-     * @param string|null $phone_number phone_number
+     * @param string|null $type type
      *
      * @return $this
      */
-    public function setPhoneNumber($phone_number)
+    public function setType($type)
     {
-        $this->container['phone_number'] = $phone_number;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets email_address
+     * Gets currency
      *
      * @return string|null
      */
-    public function getEmailAddress()
+    public function getCurrency()
     {
-        return $this->container['email_address'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets email_address
+     * Sets currency
      *
-     * @param string|null $email_address email_address
+     * @param string|null $currency currency
      *
      * @return $this
      */
-    public function setEmailAddress($email_address)
+    public function setCurrency($currency)
     {
-        $this->container['email_address'] = $email_address;
+        $this->container['currency'] = $currency;
 
         return $this;
     }
 
     /**
-     * Gets mobile_phone_number
+     * Gets total_charge_type
      *
-     * @return string|null
+     * @return \MyDHL\Model\TotalChargeType[]|null
      */
-    public function getMobilePhoneNumber()
+    public function getTotalChargeType()
     {
-        return $this->container['mobile_phone_number'];
+        return $this->container['total_charge_type'];
     }
 
     /**
-     * Sets mobile_phone_number
+     * Sets total_charge_type
      *
-     * @param string|null $mobile_phone_number mobile_phone_number
+     * @param \MyDHL\Model\TotalChargeType[]|null $total_charge_type total_charge_type
      *
      * @return $this
      */
-    public function setMobilePhoneNumber($mobile_phone_number)
+    public function setTotalChargeType($total_charge_type)
     {
-        $this->container['mobile_phone_number'] = $mobile_phone_number;
+        $this->container['total_charge_type'] = $total_charge_type;
 
         return $this;
     }

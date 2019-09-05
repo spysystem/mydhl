@@ -79,6 +79,20 @@ class ChargeTest extends TestCase
     }
 
     /**
+     * Test attribute "charge_code"
+     */
+    public function testPropertyChargeCode()
+    {
+    }
+
+    /**
+     * Test attribute "local_charge_code"
+     */
+    public function testPropertyLocalChargeCode()
+    {
+    }
+
+    /**
      * Test attribute "charge_type"
      */
     public function testPropertyChargeType()
@@ -89,6 +103,48 @@ class ChargeTest extends TestCase
      * Test attribute "charge_amount"
      */
     public function testPropertyChargeAmount()
+    {
+    }
+
+    /**
+     * Test attribute "charge_name"
+     */
+    public function testPropertyChargeName()
+    {
+    }
+
+    /**
+     * Test attribute "charge_currency_code"
+     */
+    public function testPropertyChargeCurrencyCode()
+    {
+    }
+
+    /**
+     * Test attribute "charge_code_type_code"
+     */
+    public function testPropertyChargeCodeTypeCode()
+    {
+    }
+
+    /**
+     * Test attribute "billing_service_ind"
+     */
+    public function testPropertyBillingServiceInd()
+    {
+    }
+
+    /**
+     * Test attribute "customer_aggreement_ind"
+     */
+    public function testPropertyCustomerAggreementInd()
+    {
+    }
+
+    /**
+     * Test attribute "marketed_service_ind"
+     */
+    public function testPropertyMarketedServiceInd()
     {
     }
 }

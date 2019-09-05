@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactTest
+ * RateRequestStakeHolderTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace MyDHL;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ContactTest Class Doc Comment
+ * RateRequestStakeHolderTest Class Doc Comment
  *
  * @category    Class
- * @description Contact
+ * @description RateRequestStakeHolder
  * @package     MyDHL
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ContactTest extends TestCase
+class RateRequestStakeHolderTest extends TestCase
 {
 
     /**
@@ -72,44 +72,86 @@ class ContactTest extends TestCase
     }
 
     /**
-     * Test "Contact"
+     * Test "RateRequestStakeHolder"
      */
-    public function testContact()
+    public function testRateRequestStakeHolder()
     {
     }
 
     /**
-     * Test attribute "person_name"
+     * Test attribute "street_lines"
      */
-    public function testPropertyPersonName()
+    public function testPropertyStreetLines()
     {
     }
 
     /**
-     * Test attribute "company_name"
+     * Test attribute "street_name"
      */
-    public function testPropertyCompanyName()
+    public function testPropertyStreetName()
     {
     }
 
     /**
-     * Test attribute "phone_number"
+     * Test attribute "street_number"
      */
-    public function testPropertyPhoneNumber()
+    public function testPropertyStreetNumber()
     {
     }
 
     /**
-     * Test attribute "email_address"
+     * Test attribute "street_lines2"
      */
-    public function testPropertyEmailAddress()
+    public function testPropertyStreetLines2()
     {
     }
 
     /**
-     * Test attribute "mobile_phone_number"
+     * Test attribute "street_lines3"
      */
-    public function testPropertyMobilePhoneNumber()
+    public function testPropertyStreetLines3()
+    {
+    }
+
+    /**
+     * Test attribute "city"
+     */
+    public function testPropertyCity()
+    {
+    }
+
+    /**
+     * Test attribute "city_district"
+     */
+    public function testPropertyCityDistrict()
+    {
+    }
+
+    /**
+     * Test attribute "state_or_province_code"
+     */
+    public function testPropertyStateOrProvinceCode()
+    {
+    }
+
+    /**
+     * Test attribute "postal_code"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "country_code"
+     */
+    public function testPropertyCountryCode()
+    {
+    }
+
+    /**
+     * Test attribute "contact"
+     */
+    public function testPropertyContact()
     {
     }
 }

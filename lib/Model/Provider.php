@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact
+ * Provider
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \MyDHL\ObjectSerializer;
 
 /**
- * Contact Class Doc Comment
+ * Provider Class Doc Comment
  *
  * @category Class
  * @package  MyDHL
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Contact implements ModelInterface, ArrayAccess
+class Provider implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Contact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Contact';
+    protected static $openAPIModelName = 'Provider';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,10 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_name' => 'string',
-        'company_name' => 'string',
-        'phone_number' => 'string',
-        'email_address' => 'string',
-        'mobile_phone_number' => 'string'
+        'code' => 'string',
+        'service_header' => '\MyDHL\Model\ServiceHeader',
+        'notification' => '\MyDHL\Model\Notification[]',
+        'service' => '\MyDHL\Model\Service[]'
     ];
 
     /**
@@ -70,11 +69,10 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'person_name' => null,
-        'company_name' => null,
-        'phone_number' => null,
-        'email_address' => null,
-        'mobile_phone_number' => null
+        'code' => null,
+        'service_header' => null,
+        'notification' => null,
+        'service' => null
     ];
 
     /**
@@ -104,11 +102,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_name' => 'PersonName',
-        'company_name' => 'CompanyName',
-        'phone_number' => 'PhoneNumber',
-        'email_address' => 'EmailAddress',
-        'mobile_phone_number' => 'MobilePhoneNumber'
+        'code' => '@code',
+        'service_header' => 'ServiceHeader',
+        'notification' => 'Notification',
+        'service' => 'Service'
     ];
 
     /**
@@ -117,11 +114,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'person_name' => 'setPersonName',
-        'company_name' => 'setCompanyName',
-        'phone_number' => 'setPhoneNumber',
-        'email_address' => 'setEmailAddress',
-        'mobile_phone_number' => 'setMobilePhoneNumber'
+        'code' => 'setCode',
+        'service_header' => 'setServiceHeader',
+        'notification' => 'setNotification',
+        'service' => 'setService'
     ];
 
     /**
@@ -130,11 +126,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'person_name' => 'getPersonName',
-        'company_name' => 'getCompanyName',
-        'phone_number' => 'getPhoneNumber',
-        'email_address' => 'getEmailAddress',
-        'mobile_phone_number' => 'getMobilePhoneNumber'
+        'code' => 'getCode',
+        'service_header' => 'getServiceHeader',
+        'notification' => 'getNotification',
+        'service' => 'getService'
     ];
 
     /**
@@ -197,11 +192,10 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_name'] = isset($data['person_name']) ? $data['person_name'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
-        $this->container['mobile_phone_number'] = isset($data['mobile_phone_number']) ? $data['mobile_phone_number'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['service_header'] = isset($data['service_header']) ? $data['service_header'] : null;
+        $this->container['notification'] = isset($data['notification']) ? $data['notification'] : null;
+        $this->container['service'] = isset($data['service']) ? $data['service'] : null;
     }
 
     /**
@@ -213,12 +207,6 @@ class Contact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['person_name'] === null) {
-            $invalidProperties[] = "'person_name' can't be null";
-        }
-        if ($this->container['company_name'] === null) {
-            $invalidProperties[] = "'company_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -235,121 +223,97 @@ class Contact implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets person_name
-     *
-     * @return string
-     */
-    public function getPersonName()
-    {
-        return $this->container['person_name'];
-    }
-
-    /**
-     * Sets person_name
-     *
-     * @param string $person_name person_name
-     *
-     * @return $this
-     */
-    public function setPersonName($person_name)
-    {
-        $this->container['person_name'] = $person_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets company_name
-     *
-     * @return string
-     */
-    public function getCompanyName()
-    {
-        return $this->container['company_name'];
-    }
-
-    /**
-     * Sets company_name
-     *
-     * @param string $company_name company_name
-     *
-     * @return $this
-     */
-    public function setCompanyName($company_name)
-    {
-        $this->container['company_name'] = $company_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
+     * Gets code
      *
      * @return string|null
      */
-    public function getPhoneNumber()
+    public function getCode()
     {
-        return $this->container['phone_number'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets phone_number
+     * Sets code
      *
-     * @param string|null $phone_number phone_number
+     * @param string|null $code code
      *
      * @return $this
      */
-    public function setPhoneNumber($phone_number)
+    public function setCode($code)
     {
-        $this->container['phone_number'] = $phone_number;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets email_address
+     * Gets service_header
      *
-     * @return string|null
+     * @return \MyDHL\Model\ServiceHeader|null
      */
-    public function getEmailAddress()
+    public function getServiceHeader()
     {
-        return $this->container['email_address'];
+        return $this->container['service_header'];
     }
 
     /**
-     * Sets email_address
+     * Sets service_header
      *
-     * @param string|null $email_address email_address
+     * @param \MyDHL\Model\ServiceHeader|null $service_header service_header
      *
      * @return $this
      */
-    public function setEmailAddress($email_address)
+    public function setServiceHeader($service_header)
     {
-        $this->container['email_address'] = $email_address;
+        $this->container['service_header'] = $service_header;
 
         return $this;
     }
 
     /**
-     * Gets mobile_phone_number
+     * Gets notification
      *
-     * @return string|null
+     * @return \MyDHL\Model\Notification[]|null
      */
-    public function getMobilePhoneNumber()
+    public function getNotification()
     {
-        return $this->container['mobile_phone_number'];
+        return $this->container['notification'];
     }
 
     /**
-     * Sets mobile_phone_number
+     * Sets notification
      *
-     * @param string|null $mobile_phone_number mobile_phone_number
+     * @param \MyDHL\Model\Notification[]|null $notification notification
      *
      * @return $this
      */
-    public function setMobilePhoneNumber($mobile_phone_number)
+    public function setNotification($notification)
     {
-        $this->container['mobile_phone_number'] = $mobile_phone_number;
+        $this->container['notification'] = $notification;
+
+        return $this;
+    }
+
+    /**
+     * Gets service
+     *
+     * @return \MyDHL\Model\Service[]|null
+     */
+    public function getService()
+    {
+        return $this->container['service'];
+    }
+
+    /**
+     * Sets service
+     *
+     * @param \MyDHL\Model\Service[]|null $service service
+     *
+     * @return $this
+     */
+    public function setService($service)
+    {
+        $this->container['service'] = $service;
 
         return $this;
     }

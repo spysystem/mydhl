@@ -67,19 +67,19 @@ $config = MyDHL\Configuration::getDefaultConfiguration()
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new MyDHL\Api\ShipmentRequestApi(
+$apiInstance = new MyDHL\Api\DHLClientApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$data = new \MyDHL\Model\ShipmentRequestRequest(); // \MyDHL\Model\ShipmentRequestRequest | Shipment Data
+$data = new \MyDHL\Model\RateRequestRequest(); // \MyDHL\Model\RateRequestRequest | Rate Request Data
 
 try {
-    $result = $apiInstance->requestShipment($data);
+    $result = $apiInstance->requestRate($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ShipmentRequestApi->requestShipment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DHLClientApi->requestRate: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -91,7 +91,8 @@ All URIs are relative to *https://wsbexpress.dhl.com/rest/sndpt*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ShipmentRequestApi* | [**requestShipment**](docs/Api/ShipmentRequestApi.md#requestshipment) | **POST** /ShipmentRequest | Create a Shipment
+*DHLClientApi* | [**requestRate**](docs/Api/DHLClientApi.md#requestrate) | **POST** /RateRequest | Requests a Shipment Rate
+*DHLClientApi* | [**requestShipment**](docs/Api/DHLClientApi.md#requestshipment) | **POST** /ShipmentRequest | Create a Shipment
 
 
 ## Documentation For Models
@@ -125,9 +126,21 @@ Class | Method | HTTP request | Description
  - [PackageResult](docs/Model/PackageResult.md)
  - [Packages](docs/Model/Packages.md)
  - [PackagesResult](docs/Model/PackagesResult.md)
+ - [Provider](docs/Model/Provider.md)
+ - [RateRequest](docs/Model/RateRequest.md)
+ - [RateRequestPackages](docs/Model/RateRequestPackages.md)
+ - [RateRequestRequest](docs/Model/RateRequestRequest.md)
+ - [RateRequestRequestedPackage](docs/Model/RateRequestRequestedPackage.md)
+ - [RateRequestRequestedShipment](docs/Model/RateRequestRequestedShipment.md)
+ - [RateRequestShip](docs/Model/RateRequestShip.md)
+ - [RateRequestStakeHolder](docs/Model/RateRequestStakeHolder.md)
+ - [RateRequestTotalNet](docs/Model/RateRequestTotalNet.md)
+ - [RateResponse](docs/Model/RateResponse.md)
+ - [RateResponseResponse](docs/Model/RateResponseResponse.md)
  - [Reason](docs/Model/Reason.md)
  - [RegistrationNumber](docs/Model/RegistrationNumber.md)
  - [RegistrationNumbers](docs/Model/RegistrationNumbers.md)
+ - [Request](docs/Model/Request.md)
  - [RequestedPackage](docs/Model/RequestedPackage.md)
  - [RequestedShipment](docs/Model/RequestedShipment.md)
  - [Response](docs/Model/Response.md)
@@ -144,9 +157,13 @@ Class | Method | HTTP request | Description
  - [ShipmentRequest](docs/Model/ShipmentRequest.md)
  - [ShipmentRequestRequest](docs/Model/ShipmentRequestRequest.md)
  - [ShipmentRequestResponse](docs/Model/ShipmentRequestResponse.md)
+ - [SpecialService](docs/Model/SpecialService.md)
  - [SpecialServices](docs/Model/SpecialServices.md)
  - [StakeHolder](docs/Model/StakeHolder.md)
+ - [TotalChargeType](docs/Model/TotalChargeType.md)
+ - [TotalChargeTypes](docs/Model/TotalChargeTypes.md)
  - [TotalNet](docs/Model/TotalNet.md)
+ - [Weight](docs/Model/Weight.md)
 
 
 ## Documentation For Authorization

@@ -57,8 +57,16 @@ class Charge implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'charge_code' => 'string',
+        'local_charge_code' => 'string',
         'charge_type' => 'string',
-        'charge_amount' => 'string'
+        'charge_amount' => 'string',
+        'charge_name' => 'string',
+        'charge_currency_code' => 'string',
+        'charge_code_type_code' => 'string',
+        'billing_service_ind' => 'string',
+        'customer_aggreement_ind' => 'string',
+        'marketed_service_ind' => 'string'
     ];
 
     /**
@@ -67,8 +75,16 @@ class Charge implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'charge_code' => null,
+        'local_charge_code' => null,
         'charge_type' => null,
-        'charge_amount' => null
+        'charge_amount' => null,
+        'charge_name' => null,
+        'charge_currency_code' => null,
+        'charge_code_type_code' => null,
+        'billing_service_ind' => null,
+        'customer_aggreement_ind' => null,
+        'marketed_service_ind' => null
     ];
 
     /**
@@ -98,8 +114,16 @@ class Charge implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'charge_code' => 'ChargeCode',
+        'local_charge_code' => 'LocalChargeCode',
         'charge_type' => 'ChargeType',
-        'charge_amount' => 'ChargeAmount'
+        'charge_amount' => 'ChargeAmount',
+        'charge_name' => 'ChargeName',
+        'charge_currency_code' => 'ChargeCurrencyCode',
+        'charge_code_type_code' => 'ChargeCodeTypeCode',
+        'billing_service_ind' => 'BillingServiceInd',
+        'customer_aggreement_ind' => 'CustomerAggreementInd',
+        'marketed_service_ind' => 'MarketedServiceInd'
     ];
 
     /**
@@ -108,8 +132,16 @@ class Charge implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'charge_code' => 'setChargeCode',
+        'local_charge_code' => 'setLocalChargeCode',
         'charge_type' => 'setChargeType',
-        'charge_amount' => 'setChargeAmount'
+        'charge_amount' => 'setChargeAmount',
+        'charge_name' => 'setChargeName',
+        'charge_currency_code' => 'setChargeCurrencyCode',
+        'charge_code_type_code' => 'setChargeCodeTypeCode',
+        'billing_service_ind' => 'setBillingServiceInd',
+        'customer_aggreement_ind' => 'setCustomerAggreementInd',
+        'marketed_service_ind' => 'setMarketedServiceInd'
     ];
 
     /**
@@ -118,8 +150,16 @@ class Charge implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'charge_code' => 'getChargeCode',
+        'local_charge_code' => 'getLocalChargeCode',
         'charge_type' => 'getChargeType',
-        'charge_amount' => 'getChargeAmount'
+        'charge_amount' => 'getChargeAmount',
+        'charge_name' => 'getChargeName',
+        'charge_currency_code' => 'getChargeCurrencyCode',
+        'charge_code_type_code' => 'getChargeCodeTypeCode',
+        'billing_service_ind' => 'getBillingServiceInd',
+        'customer_aggreement_ind' => 'getCustomerAggreementInd',
+        'marketed_service_ind' => 'getMarketedServiceInd'
     ];
 
     /**
@@ -182,8 +222,16 @@ class Charge implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['charge_code'] = isset($data['charge_code']) ? $data['charge_code'] : null;
+        $this->container['local_charge_code'] = isset($data['local_charge_code']) ? $data['local_charge_code'] : null;
         $this->container['charge_type'] = isset($data['charge_type']) ? $data['charge_type'] : null;
         $this->container['charge_amount'] = isset($data['charge_amount']) ? $data['charge_amount'] : null;
+        $this->container['charge_name'] = isset($data['charge_name']) ? $data['charge_name'] : null;
+        $this->container['charge_currency_code'] = isset($data['charge_currency_code']) ? $data['charge_currency_code'] : null;
+        $this->container['charge_code_type_code'] = isset($data['charge_code_type_code']) ? $data['charge_code_type_code'] : null;
+        $this->container['billing_service_ind'] = isset($data['billing_service_ind']) ? $data['billing_service_ind'] : null;
+        $this->container['customer_aggreement_ind'] = isset($data['customer_aggreement_ind']) ? $data['customer_aggreement_ind'] : null;
+        $this->container['marketed_service_ind'] = isset($data['marketed_service_ind']) ? $data['marketed_service_ind'] : null;
     }
 
     /**
@@ -215,6 +263,54 @@ class Charge implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets charge_code
+     *
+     * @return string|null
+     */
+    public function getChargeCode()
+    {
+        return $this->container['charge_code'];
+    }
+
+    /**
+     * Sets charge_code
+     *
+     * @param string|null $charge_code charge_code
+     *
+     * @return $this
+     */
+    public function setChargeCode($charge_code)
+    {
+        $this->container['charge_code'] = $charge_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets local_charge_code
+     *
+     * @return string|null
+     */
+    public function getLocalChargeCode()
+    {
+        return $this->container['local_charge_code'];
+    }
+
+    /**
+     * Sets local_charge_code
+     *
+     * @param string|null $local_charge_code local_charge_code
+     *
+     * @return $this
+     */
+    public function setLocalChargeCode($local_charge_code)
+    {
+        $this->container['local_charge_code'] = $local_charge_code;
+
+        return $this;
+    }
 
     /**
      * Gets charge_type
@@ -260,6 +356,150 @@ class Charge implements ModelInterface, ArrayAccess
     public function setChargeAmount($charge_amount)
     {
         $this->container['charge_amount'] = $charge_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets charge_name
+     *
+     * @return string|null
+     */
+    public function getChargeName()
+    {
+        return $this->container['charge_name'];
+    }
+
+    /**
+     * Sets charge_name
+     *
+     * @param string|null $charge_name charge_name
+     *
+     * @return $this
+     */
+    public function setChargeName($charge_name)
+    {
+        $this->container['charge_name'] = $charge_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets charge_currency_code
+     *
+     * @return string|null
+     */
+    public function getChargeCurrencyCode()
+    {
+        return $this->container['charge_currency_code'];
+    }
+
+    /**
+     * Sets charge_currency_code
+     *
+     * @param string|null $charge_currency_code charge_currency_code
+     *
+     * @return $this
+     */
+    public function setChargeCurrencyCode($charge_currency_code)
+    {
+        $this->container['charge_currency_code'] = $charge_currency_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets charge_code_type_code
+     *
+     * @return string|null
+     */
+    public function getChargeCodeTypeCode()
+    {
+        return $this->container['charge_code_type_code'];
+    }
+
+    /**
+     * Sets charge_code_type_code
+     *
+     * @param string|null $charge_code_type_code charge_code_type_code
+     *
+     * @return $this
+     */
+    public function setChargeCodeTypeCode($charge_code_type_code)
+    {
+        $this->container['charge_code_type_code'] = $charge_code_type_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets billing_service_ind
+     *
+     * @return string|null
+     */
+    public function getBillingServiceInd()
+    {
+        return $this->container['billing_service_ind'];
+    }
+
+    /**
+     * Sets billing_service_ind
+     *
+     * @param string|null $billing_service_ind billing_service_ind
+     *
+     * @return $this
+     */
+    public function setBillingServiceInd($billing_service_ind)
+    {
+        $this->container['billing_service_ind'] = $billing_service_ind;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_aggreement_ind
+     *
+     * @return string|null
+     */
+    public function getCustomerAggreementInd()
+    {
+        return $this->container['customer_aggreement_ind'];
+    }
+
+    /**
+     * Sets customer_aggreement_ind
+     *
+     * @param string|null $customer_aggreement_ind customer_aggreement_ind
+     *
+     * @return $this
+     */
+    public function setCustomerAggreementInd($customer_aggreement_ind)
+    {
+        $this->container['customer_aggreement_ind'] = $customer_aggreement_ind;
+
+        return $this;
+    }
+
+    /**
+     * Gets marketed_service_ind
+     *
+     * @return string|null
+     */
+    public function getMarketedServiceInd()
+    {
+        return $this->container['marketed_service_ind'];
+    }
+
+    /**
+     * Sets marketed_service_ind
+     *
+     * @param string|null $marketed_service_ind marketed_service_ind
+     *
+     * @return $this
+     */
+    public function setMarketedServiceInd($marketed_service_ind)
+    {
+        $this->container['marketed_service_ind'] = $marketed_service_ind;
 
         return $this;
     }

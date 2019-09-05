@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact
+ * SpecialService
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \MyDHL\ObjectSerializer;
 
 /**
- * Contact Class Doc Comment
+ * SpecialService Class Doc Comment
  *
  * @category Class
  * @package  MyDHL
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class Contact implements ModelInterface, ArrayAccess
+class SpecialService implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Contact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Contact';
+    protected static $openAPIModelName = 'SpecialService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,11 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'person_name' => 'string',
-        'company_name' => 'string',
-        'phone_number' => 'string',
-        'email_address' => 'string',
-        'mobile_phone_number' => 'string'
+        'service_type' => 'string',
+        'local_service_type' => 'string',
+        'service_value' => 'float',
+        'currency_code' => 'string',
+        'payment_code' => 'string'
     ];
 
     /**
@@ -70,11 +70,11 @@ class Contact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'person_name' => null,
-        'company_name' => null,
-        'phone_number' => null,
-        'email_address' => null,
-        'mobile_phone_number' => null
+        'service_type' => null,
+        'local_service_type' => null,
+        'service_value' => null,
+        'currency_code' => null,
+        'payment_code' => null
     ];
 
     /**
@@ -104,11 +104,11 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'person_name' => 'PersonName',
-        'company_name' => 'CompanyName',
-        'phone_number' => 'PhoneNumber',
-        'email_address' => 'EmailAddress',
-        'mobile_phone_number' => 'MobilePhoneNumber'
+        'service_type' => 'ServiceType',
+        'local_service_type' => 'LocalServiceType',
+        'service_value' => 'ServiceValue',
+        'currency_code' => 'CurrencyCode',
+        'payment_code' => 'PaymentCode'
     ];
 
     /**
@@ -117,11 +117,11 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'person_name' => 'setPersonName',
-        'company_name' => 'setCompanyName',
-        'phone_number' => 'setPhoneNumber',
-        'email_address' => 'setEmailAddress',
-        'mobile_phone_number' => 'setMobilePhoneNumber'
+        'service_type' => 'setServiceType',
+        'local_service_type' => 'setLocalServiceType',
+        'service_value' => 'setServiceValue',
+        'currency_code' => 'setCurrencyCode',
+        'payment_code' => 'setPaymentCode'
     ];
 
     /**
@@ -130,11 +130,11 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'person_name' => 'getPersonName',
-        'company_name' => 'getCompanyName',
-        'phone_number' => 'getPhoneNumber',
-        'email_address' => 'getEmailAddress',
-        'mobile_phone_number' => 'getMobilePhoneNumber'
+        'service_type' => 'getServiceType',
+        'local_service_type' => 'getLocalServiceType',
+        'service_value' => 'getServiceValue',
+        'currency_code' => 'getCurrencyCode',
+        'payment_code' => 'getPaymentCode'
     ];
 
     /**
@@ -197,11 +197,11 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['person_name'] = isset($data['person_name']) ? $data['person_name'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
-        $this->container['mobile_phone_number'] = isset($data['mobile_phone_number']) ? $data['mobile_phone_number'] : null;
+        $this->container['service_type'] = isset($data['service_type']) ? $data['service_type'] : null;
+        $this->container['local_service_type'] = isset($data['local_service_type']) ? $data['local_service_type'] : null;
+        $this->container['service_value'] = isset($data['service_value']) ? $data['service_value'] : null;
+        $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
+        $this->container['payment_code'] = isset($data['payment_code']) ? $data['payment_code'] : null;
     }
 
     /**
@@ -213,11 +213,8 @@ class Contact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['person_name'] === null) {
-            $invalidProperties[] = "'person_name' can't be null";
-        }
-        if ($this->container['company_name'] === null) {
-            $invalidProperties[] = "'company_name' can't be null";
+        if ($this->container['service_type'] === null) {
+            $invalidProperties[] = "'service_type' can't be null";
         }
         return $invalidProperties;
     }
@@ -235,121 +232,121 @@ class Contact implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets person_name
+     * Gets service_type
      *
      * @return string
      */
-    public function getPersonName()
+    public function getServiceType()
     {
-        return $this->container['person_name'];
+        return $this->container['service_type'];
     }
 
     /**
-     * Sets person_name
+     * Sets service_type
      *
-     * @param string $person_name person_name
+     * @param string $service_type service_type
      *
      * @return $this
      */
-    public function setPersonName($person_name)
+    public function setServiceType($service_type)
     {
-        $this->container['person_name'] = $person_name;
+        $this->container['service_type'] = $service_type;
 
         return $this;
     }
 
     /**
-     * Gets company_name
-     *
-     * @return string
-     */
-    public function getCompanyName()
-    {
-        return $this->container['company_name'];
-    }
-
-    /**
-     * Sets company_name
-     *
-     * @param string $company_name company_name
-     *
-     * @return $this
-     */
-    public function setCompanyName($company_name)
-    {
-        $this->container['company_name'] = $company_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
+     * Gets local_service_type
      *
      * @return string|null
      */
-    public function getPhoneNumber()
+    public function getLocalServiceType()
     {
-        return $this->container['phone_number'];
+        return $this->container['local_service_type'];
     }
 
     /**
-     * Sets phone_number
+     * Sets local_service_type
      *
-     * @param string|null $phone_number phone_number
+     * @param string|null $local_service_type local_service_type
      *
      * @return $this
      */
-    public function setPhoneNumber($phone_number)
+    public function setLocalServiceType($local_service_type)
     {
-        $this->container['phone_number'] = $phone_number;
+        $this->container['local_service_type'] = $local_service_type;
 
         return $this;
     }
 
     /**
-     * Gets email_address
+     * Gets service_value
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getEmailAddress()
+    public function getServiceValue()
     {
-        return $this->container['email_address'];
+        return $this->container['service_value'];
     }
 
     /**
-     * Sets email_address
+     * Sets service_value
      *
-     * @param string|null $email_address email_address
+     * @param float|null $service_value service_value
      *
      * @return $this
      */
-    public function setEmailAddress($email_address)
+    public function setServiceValue($service_value)
     {
-        $this->container['email_address'] = $email_address;
+        $this->container['service_value'] = $service_value;
 
         return $this;
     }
 
     /**
-     * Gets mobile_phone_number
+     * Gets currency_code
      *
      * @return string|null
      */
-    public function getMobilePhoneNumber()
+    public function getCurrencyCode()
     {
-        return $this->container['mobile_phone_number'];
+        return $this->container['currency_code'];
     }
 
     /**
-     * Sets mobile_phone_number
+     * Sets currency_code
      *
-     * @param string|null $mobile_phone_number mobile_phone_number
+     * @param string|null $currency_code currency_code
      *
      * @return $this
      */
-    public function setMobilePhoneNumber($mobile_phone_number)
+    public function setCurrencyCode($currency_code)
     {
-        $this->container['mobile_phone_number'] = $mobile_phone_number;
+        $this->container['currency_code'] = $currency_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_code
+     *
+     * @return string|null
+     */
+    public function getPaymentCode()
+    {
+        return $this->container['payment_code'];
+    }
+
+    /**
+     * Sets payment_code
+     *
+     * @param string|null $payment_code payment_code
+     *
+     * @return $this
+     */
+    public function setPaymentCode($payment_code)
+    {
+        $this->container['payment_code'] = $payment_code;
 
         return $this;
     }

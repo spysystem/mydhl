@@ -79,6 +79,20 @@ class ChargesTest extends TestCase
     }
 
     /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
+    {
+    }
+
+    /**
      * Test attribute "charge"
      */
     public function testPropertyCharge()
