@@ -1257,7 +1257,9 @@ definitions:
     type: object
     properties:
       Provider:
-        $ref: '#/definitions/Provider'
+        type: array
+        items:
+          $ref: '#/definitions/Provider'
 
 
   RateResponseResponse:
