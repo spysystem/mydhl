@@ -57,7 +57,7 @@ class RateResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'provider' => '\MyDHL\Model\Provider'
+        'provider' => '\MyDHL\Model\Provider[]'
     ];
 
     /**
@@ -207,7 +207,7 @@ class RateResponse implements ModelInterface, ArrayAccess
     /**
      * Gets provider
      *
-     * @return \MyDHL\Model\Provider|null
+     * @return \MyDHL\Model\Provider[]|null
      */
     public function getProvider()
     {
@@ -217,7 +217,7 @@ class RateResponse implements ModelInterface, ArrayAccess
     /**
      * Sets provider
      *
-     * @param \MyDHL\Model\Provider|null $provider provider
+     * @param \MyDHL\Model\Provider[]|null $provider provider
      *
      * @return $this
      */
