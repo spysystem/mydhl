@@ -1118,8 +1118,12 @@ definitions:
   RateRequest:
     type: object
     required:
+      - ClientDetails
       - RequestedShipment
     properties:
+      ClientDetails:
+        type: string
+        x-nullable: true
       Request:
         $ref: '#/definitions/Request'
       RequestedShipment:
