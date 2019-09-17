@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**client_details** | **string** |  | 
 **request** | [**\MyDHL\Model\Request**](Request.md) |  | [optional] 
 **requested_shipment** | [**\MyDHL\Model\RateRequestRequestedShipment**](RateRequestRequestedShipment.md) |  | 
 
