@@ -319,7 +319,6 @@ class InvoiceSignature implements ModelInterface, ArrayAccess
     public function setSignatureName($signature_name)
     {
 
-
         if (is_null($signature_name)) {
             throw new \InvalidArgumentException('non-nullable signature_name cannot be null');
         }
@@ -349,7 +348,6 @@ class InvoiceSignature implements ModelInterface, ArrayAccess
     public function setSignatureTitle($signature_title)
     {
 
-
         if (is_null($signature_title)) {
             throw new \InvalidArgumentException('non-nullable signature_title cannot be null');
         }
@@ -378,7 +376,6 @@ class InvoiceSignature implements ModelInterface, ArrayAccess
      */
     public function setSignatureImage($signature_image)
     {
-
 
         if (is_null($signature_image)) {
             throw new \InvalidArgumentException('non-nullable signature_image cannot be null');

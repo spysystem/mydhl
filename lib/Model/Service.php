@@ -540,7 +540,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setType($type)
     {
 
-
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
@@ -569,7 +568,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setDeliveryTime($delivery_time)
     {
-
 
         if (is_null($delivery_time)) {
             throw new \InvalidArgumentException('non-nullable delivery_time cannot be null');
@@ -600,7 +598,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setDeliveryType($delivery_type)
     {
 
-
         if (is_null($delivery_type)) {
             throw new \InvalidArgumentException('non-nullable delivery_type cannot be null');
         }
@@ -629,7 +626,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setCutoffTime($cutoff_time)
     {
-
 
         if (is_null($cutoff_time)) {
             throw new \InvalidArgumentException('non-nullable cutoff_time cannot be null');
@@ -660,7 +656,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setCutoffTimeGmt($cutoff_time_gmt)
     {
 
-
         if (is_null($cutoff_time_gmt)) {
             throw new \InvalidArgumentException('non-nullable cutoff_time_gmt cannot be null');
         }
@@ -689,7 +684,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setCutoffTimeOffset($cutoff_time_offset)
     {
-
 
         if (is_null($cutoff_time_offset)) {
             throw new \InvalidArgumentException('non-nullable cutoff_time_offset cannot be null');
@@ -729,7 +723,6 @@ class Service implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($next_business_day_ind)) {
             throw new \InvalidArgumentException('non-nullable next_business_day_ind cannot be null');
         }
@@ -758,7 +751,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setPickupWindowEarliestTime($pickup_window_earliest_time)
     {
-
 
         if (is_null($pickup_window_earliest_time)) {
             throw new \InvalidArgumentException('non-nullable pickup_window_earliest_time cannot be null');
@@ -789,7 +781,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setPickupWindowLatestTime($pickup_window_latest_time)
     {
 
-
         if (is_null($pickup_window_latest_time)) {
             throw new \InvalidArgumentException('non-nullable pickup_window_latest_time cannot be null');
         }
@@ -818,7 +809,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setServiceName($service_name)
     {
-
 
         if (is_null($service_name)) {
             throw new \InvalidArgumentException('non-nullable service_name cannot be null');
@@ -849,7 +839,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setLocalServiceType($local_service_type)
     {
 
-
         if (is_null($local_service_type)) {
             throw new \InvalidArgumentException('non-nullable local_service_type cannot be null');
         }
@@ -878,7 +867,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setLocalServiceCountryCode($local_service_country_code)
     {
-
 
         if (is_null($local_service_country_code)) {
             throw new \InvalidArgumentException('non-nullable local_service_country_code cannot be null');
@@ -909,7 +897,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setNetworkTypeCode($network_type_code)
     {
 
-
         if (is_null($network_type_code)) {
             throw new \InvalidArgumentException('non-nullable network_type_code cannot be null');
         }
@@ -938,7 +925,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setCustomerAggreementInd($customer_aggreement_ind)
     {
-
 
         if (is_null($customer_aggreement_ind)) {
             throw new \InvalidArgumentException('non-nullable customer_aggreement_ind cannot be null');
@@ -969,7 +955,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setTotalTransitDays($total_transit_days)
     {
 
-
         if (is_null($total_transit_days)) {
             throw new \InvalidArgumentException('non-nullable total_transit_days cannot be null');
         }
@@ -998,7 +983,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setPickupAdditionalDates($pickup_additional_dates)
     {
-
 
         if (is_null($pickup_additional_dates)) {
             throw new \InvalidArgumentException('non-nullable pickup_additional_dates cannot be null');
@@ -1029,7 +1013,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setDeliveryAdditionalDays($delivery_additional_days)
     {
 
-
         if (is_null($delivery_additional_days)) {
             throw new \InvalidArgumentException('non-nullable delivery_additional_days cannot be null');
         }
@@ -1059,7 +1042,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setVolumetricWeight($volumetric_weight)
     {
 
-
         if (is_null($volumetric_weight)) {
             throw new \InvalidArgumentException('non-nullable volumetric_weight cannot be null');
         }
@@ -1088,7 +1070,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setQuotedWeight($quoted_weight)
     {
-
 
         if (is_null($quoted_weight)) {
             throw new \InvalidArgumentException('non-nullable quoted_weight cannot be null');
@@ -1128,7 +1109,6 @@ class Service implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($unit_of_measurement)) {
             throw new \InvalidArgumentException('non-nullable unit_of_measurement cannot be null');
         }
@@ -1157,7 +1137,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setPickupDayOfWeek($pickup_day_of_week)
     {
-
 
         if (is_null($pickup_day_of_week)) {
             throw new \InvalidArgumentException('non-nullable pickup_day_of_week cannot be null');
@@ -1188,7 +1167,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setDestinationDayOfWeek($destination_day_of_week)
     {
 
-
         if (is_null($destination_day_of_week)) {
             throw new \InvalidArgumentException('non-nullable destination_day_of_week cannot be null');
         }
@@ -1217,7 +1195,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setPricingDate($pricing_date)
     {
-
 
         if (is_null($pricing_date)) {
             throw new \InvalidArgumentException('non-nullable pricing_date cannot be null');
@@ -1248,7 +1225,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setOriginServiceArea($origin_service_area)
     {
 
-
         if (is_null($origin_service_area)) {
             throw new \InvalidArgumentException('non-nullable origin_service_area cannot be null');
         }
@@ -1277,7 +1253,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setDestinationServiceArea($destination_service_area)
     {
-
 
         if (is_null($destination_service_area)) {
             throw new \InvalidArgumentException('non-nullable destination_service_area cannot be null');
@@ -1308,7 +1283,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setTotalNet($total_net)
     {
 
-
         if (is_null($total_net)) {
             throw new \InvalidArgumentException('non-nullable total_net cannot be null');
         }
@@ -1338,7 +1312,6 @@ class Service implements ModelInterface, ArrayAccess
     public function setCharges($charges)
     {
 
-
         if (is_null($charges)) {
             throw new \InvalidArgumentException('non-nullable charges cannot be null');
         }
@@ -1367,7 +1340,6 @@ class Service implements ModelInterface, ArrayAccess
      */
     public function setTotalChargeTypes($total_charge_types)
     {
-
 
         if (is_null($total_charge_types)) {
             throw new \InvalidArgumentException('non-nullable total_charge_types cannot be null');

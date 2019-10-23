@@ -308,7 +308,6 @@ class RateRequestRequest implements ModelInterface, ArrayAccess
     public function setRateRequest($rate_request)
     {
 
-
         if (is_null($rate_request)) {
             throw new \InvalidArgumentException('non-nullable rate_request cannot be null');
         }

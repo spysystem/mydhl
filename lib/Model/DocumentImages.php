@@ -308,7 +308,6 @@ class DocumentImages implements ModelInterface, ArrayAccess
     public function setDocumentImage($document_image)
     {
 
-
         if (is_null($document_image)) {
             throw new \InvalidArgumentException('non-nullable document_image cannot be null');
         }

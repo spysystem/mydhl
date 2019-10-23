@@ -325,7 +325,6 @@ class LabelImage implements ModelInterface, ArrayAccess
     public function setLabelImageFormat($label_image_format)
     {
 
-
         if (is_null($label_image_format)) {
             throw new \InvalidArgumentException('non-nullable label_image_format cannot be null');
         }
@@ -355,7 +354,6 @@ class LabelImage implements ModelInterface, ArrayAccess
     public function setGraphicImage($graphic_image)
     {
 
-
         if (is_null($graphic_image)) {
             throw new \InvalidArgumentException('non-nullable graphic_image cannot be null');
         }
@@ -384,7 +382,6 @@ class LabelImage implements ModelInterface, ArrayAccess
      */
     public function setHtmlImage($html_image)
     {
-
 
         if (is_null($html_image)) {
             throw new \InvalidArgumentException('non-nullable html_image cannot be null');

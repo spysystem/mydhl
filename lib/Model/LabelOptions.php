@@ -493,7 +493,6 @@ class LabelOptions implements ModelInterface, ArrayAccess
     public function setPrinterDpi($printer_dpi)
     {
 
-
         if (is_null($printer_dpi)) {
             throw new \InvalidArgumentException('non-nullable printer_dpi cannot be null');
         }
@@ -522,7 +521,6 @@ class LabelOptions implements ModelInterface, ArrayAccess
      */
     public function setHideAccountInWaybillDocument($hide_account_in_waybill_document)
     {
-
 
         if (is_null($hide_account_in_waybill_document)) {
             throw new \InvalidArgumentException('non-nullable hide_account_in_waybill_document cannot be null');
@@ -553,7 +551,6 @@ class LabelOptions implements ModelInterface, ArrayAccess
     public function setRequestWaybillDocument($request_waybill_document)
     {
 
-
         if (is_null($request_waybill_document)) {
             throw new \InvalidArgumentException('non-nullable request_waybill_document cannot be null');
         }
@@ -582,7 +579,6 @@ class LabelOptions implements ModelInterface, ArrayAccess
      */
     public function setNumberOfWaybillDocumentCopies($number_of_waybill_document_copies)
     {
-
 
         if (is_null($number_of_waybill_document_copies)) {
             throw new \InvalidArgumentException('non-nullable number_of_waybill_document_copies cannot be null');
@@ -622,7 +618,6 @@ class LabelOptions implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($request_dhl_customs_invoice)) {
             throw new \InvalidArgumentException('non-nullable request_dhl_customs_invoice cannot be null');
         }
@@ -660,7 +655,6 @@ class LabelOptions implements ModelInterface, ArrayAccess
                 )
             );
         }
-
 
         if (is_null($dhl_customs_invoice_language)) {
             throw new \InvalidArgumentException('non-nullable dhl_customs_invoice_language cannot be null');
@@ -700,7 +694,6 @@ class LabelOptions implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($dhl_customs_invoice_type)) {
             throw new \InvalidArgumentException('non-nullable dhl_customs_invoice_type cannot be null');
         }
@@ -739,7 +732,6 @@ class LabelOptions implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($request_shipment_receipt)) {
             throw new \InvalidArgumentException('non-nullable request_shipment_receipt cannot be null');
         }
@@ -768,7 +760,6 @@ class LabelOptions implements ModelInterface, ArrayAccess
      */
     public function setCustomerLogo($customer_logo)
     {
-
 
         if (is_null($customer_logo)) {
             throw new \InvalidArgumentException('non-nullable customer_logo cannot be null');

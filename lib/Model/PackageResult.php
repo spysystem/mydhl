@@ -315,7 +315,6 @@ class PackageResult implements ModelInterface, ArrayAccess
     public function setNumber($number)
     {
 
-
         if (is_null($number)) {
             throw new \InvalidArgumentException('non-nullable number cannot be null');
         }
@@ -344,7 +343,6 @@ class PackageResult implements ModelInterface, ArrayAccess
      */
     public function setTrackingNumber($tracking_number)
     {
-
 
         if (is_null($tracking_number)) {
             throw new \InvalidArgumentException('non-nullable tracking_number cannot be null');

@@ -322,7 +322,6 @@ class Commodities implements ModelInterface, ArrayAccess
     public function setDescription($description)
     {
 
-
         if (is_null($description)) {
             throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
@@ -352,7 +351,6 @@ class Commodities implements ModelInterface, ArrayAccess
     public function setCustomsValue($customs_value)
     {
 
-
         if (is_null($customs_value)) {
             throw new \InvalidArgumentException('non-nullable customs_value cannot be null');
         }
@@ -381,7 +379,6 @@ class Commodities implements ModelInterface, ArrayAccess
      */
     public function setUsFilingTypeValue($us_filing_type_value)
     {
-
 
         if (is_null($us_filing_type_value)) {
             throw new \InvalidArgumentException('non-nullable us_filing_type_value cannot be null');

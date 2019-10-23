@@ -384,7 +384,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
     public function setStreetLines($street_lines)
     {
 
-
         if (is_null($street_lines)) {
             throw new \InvalidArgumentException('non-nullable street_lines cannot be null');
         }
@@ -413,7 +412,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
      */
     public function setStreetName($street_name)
     {
-
 
         if (is_null($street_name)) {
             throw new \InvalidArgumentException('non-nullable street_name cannot be null');
@@ -444,7 +442,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
     public function setStreetNumber($street_number)
     {
 
-
         if (is_null($street_number)) {
             throw new \InvalidArgumentException('non-nullable street_number cannot be null');
         }
@@ -473,7 +470,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
      */
     public function setStreetLines2($street_lines2)
     {
-
 
         if (is_null($street_lines2)) {
             throw new \InvalidArgumentException('non-nullable street_lines2 cannot be null');
@@ -504,7 +500,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
     public function setStreetLines3($street_lines3)
     {
 
-
         if (is_null($street_lines3)) {
             throw new \InvalidArgumentException('non-nullable street_lines3 cannot be null');
         }
@@ -533,7 +528,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
      */
     public function setCity($city)
     {
-
 
         if (is_null($city)) {
             throw new \InvalidArgumentException('non-nullable city cannot be null');
@@ -564,7 +558,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
     public function setCityDistrict($city_district)
     {
 
-
         if (is_null($city_district)) {
             throw new \InvalidArgumentException('non-nullable city_district cannot be null');
         }
@@ -593,7 +586,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
      */
     public function setStateOrProvinceCode($state_or_province_code)
     {
-
 
         if (is_null($state_or_province_code)) {
             throw new \InvalidArgumentException('non-nullable state_or_province_code cannot be null');
@@ -624,7 +616,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
     public function setPostalCode($postal_code)
     {
 
-
         if (is_null($postal_code)) {
             throw new \InvalidArgumentException('non-nullable postal_code cannot be null');
         }
@@ -654,7 +645,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
     public function setCountryCode($country_code)
     {
 
-
         if (is_null($country_code)) {
             throw new \InvalidArgumentException('non-nullable country_code cannot be null');
         }
@@ -683,7 +673,6 @@ class RateRequestStakeHolder implements ModelInterface, ArrayAccess
      */
     public function setContact($contact)
     {
-
 
         if (is_null($contact)) {
             throw new \InvalidArgumentException('non-nullable contact cannot be null');

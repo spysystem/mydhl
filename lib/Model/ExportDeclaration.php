@@ -403,7 +403,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
     public function setDestinationPort($destination_port)
     {
 
-
         if (is_null($destination_port)) {
             throw new \InvalidArgumentException('non-nullable destination_port cannot be null');
         }
@@ -432,7 +431,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
      */
     public function setExporterCode($exporter_code)
     {
-
 
         if (is_null($exporter_code)) {
             throw new \InvalidArgumentException('non-nullable exporter_code cannot be null');
@@ -463,7 +461,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
     public function setExporterId($exporter_id)
     {
 
-
         if (is_null($exporter_id)) {
             throw new \InvalidArgumentException('non-nullable exporter_id cannot be null');
         }
@@ -492,7 +489,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
      */
     public function setExportLicense($export_license)
     {
-
 
         if (is_null($export_license)) {
             throw new \InvalidArgumentException('non-nullable export_license cannot be null');
@@ -523,7 +519,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
     public function setExportReason($export_reason)
     {
 
-
         if (is_null($export_reason)) {
             throw new \InvalidArgumentException('non-nullable export_reason cannot be null');
         }
@@ -552,7 +547,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
      */
     public function setImportLicense($import_license)
     {
-
 
         if (is_null($import_license)) {
             throw new \InvalidArgumentException('non-nullable import_license cannot be null');
@@ -583,7 +577,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
     public function setInvoiceDate($invoice_date)
     {
 
-
         if (is_null($invoice_date)) {
             throw new \InvalidArgumentException('non-nullable invoice_date cannot be null');
         }
@@ -612,7 +605,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
      */
     public function setInvoiceNumber($invoice_number)
     {
-
 
         if (is_null($invoice_number)) {
             throw new \InvalidArgumentException('non-nullable invoice_number cannot be null');
@@ -643,7 +635,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
     public function setPackageMarks($package_marks)
     {
 
-
         if (is_null($package_marks)) {
             throw new \InvalidArgumentException('non-nullable package_marks cannot be null');
         }
@@ -672,7 +663,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
      */
     public function setPayerGstvat($payer_gstvat)
     {
-
 
         if (is_null($payer_gstvat)) {
             throw new \InvalidArgumentException('non-nullable payer_gstvat cannot be null');
@@ -703,7 +693,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
     public function setRecipientReference($recipient_reference)
     {
 
-
         if (is_null($recipient_reference)) {
             throw new \InvalidArgumentException('non-nullable recipient_reference cannot be null');
         }
@@ -732,7 +721,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
      */
     public function setTermsOfPayment($terms_of_payment)
     {
-
 
         if (is_null($terms_of_payment)) {
             throw new \InvalidArgumentException('non-nullable terms_of_payment cannot be null');
@@ -763,7 +751,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
     public function setInvoiceSignature($invoice_signature)
     {
 
-
         if (is_null($invoice_signature)) {
             throw new \InvalidArgumentException('non-nullable invoice_signature cannot be null');
         }
@@ -793,7 +780,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
     public function setInvoiceDeclarationTexts($invoice_declaration_texts)
     {
 
-
         if (is_null($invoice_declaration_texts)) {
             throw new \InvalidArgumentException('non-nullable invoice_declaration_texts cannot be null');
         }
@@ -822,7 +808,6 @@ class ExportDeclaration implements ModelInterface, ArrayAccess
      */
     public function setExportLineItems($export_line_items)
     {
-
 
         if (is_null($export_line_items)) {
             throw new \InvalidArgumentException('non-nullable export_line_items cannot be null');

@@ -395,7 +395,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
     public function setShipTimestamp($ship_timestamp)
     {
 
-
         if (is_null($ship_timestamp)) {
             throw new \InvalidArgumentException('non-nullable ship_timestamp cannot be null');
         }
@@ -424,7 +423,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
      */
     public function setPickupLocationCloseTime($pickup_location_close_time)
     {
-
 
         if (is_null($pickup_location_close_time)) {
             throw new \InvalidArgumentException('non-nullable pickup_location_close_time cannot be null');
@@ -455,7 +453,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
     public function setSpecialPickupInstruction($special_pickup_instruction)
     {
 
-
         if (is_null($special_pickup_instruction)) {
             throw new \InvalidArgumentException('non-nullable special_pickup_instruction cannot be null');
         }
@@ -484,7 +481,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
      */
     public function setPickupLocation($pickup_location)
     {
-
 
         if (is_null($pickup_location)) {
             throw new \InvalidArgumentException('non-nullable pickup_location cannot be null');
@@ -515,7 +511,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
     public function setPaymentInfo($payment_info)
     {
 
-
         if (is_null($payment_info)) {
             throw new \InvalidArgumentException('non-nullable payment_info cannot be null');
         }
@@ -544,7 +539,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
      */
     public function setOnDemandDeliveryUrlRequest($on_demand_delivery_url_request)
     {
-
 
         if (is_null($on_demand_delivery_url_request)) {
             throw new \InvalidArgumentException('non-nullable on_demand_delivery_url_request cannot be null');
@@ -575,7 +569,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
     public function setGetRateEstimates($get_rate_estimates)
     {
 
-
         if (is_null($get_rate_estimates)) {
             throw new \InvalidArgumentException('non-nullable get_rate_estimates cannot be null');
         }
@@ -604,7 +597,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
      */
     public function setShipmentInfo($shipment_info)
     {
-
 
         if (is_null($shipment_info)) {
             throw new \InvalidArgumentException('non-nullable shipment_info cannot be null');
@@ -635,7 +627,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
     public function setInternationalDetail($international_detail)
     {
 
-
         if (is_null($international_detail)) {
             throw new \InvalidArgumentException('non-nullable international_detail cannot be null');
         }
@@ -664,7 +655,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
      */
     public function setOnDemandDeliveryOptions($on_demand_delivery_options)
     {
-
 
         if (is_null($on_demand_delivery_options)) {
             throw new \InvalidArgumentException('non-nullable on_demand_delivery_options cannot be null');
@@ -695,7 +685,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
     public function setShip($ship)
     {
 
-
         if (is_null($ship)) {
             throw new \InvalidArgumentException('non-nullable ship cannot be null');
         }
@@ -725,7 +714,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
     public function setPackages($packages)
     {
 
-
         if (is_null($packages)) {
             throw new \InvalidArgumentException('non-nullable packages cannot be null');
         }
@@ -754,7 +742,6 @@ class RequestedShipment implements ModelInterface, ArrayAccess
      */
     public function setShipmentNotifications($shipment_notifications)
     {
-
 
         if (is_null($shipment_notifications)) {
             throw new \InvalidArgumentException('non-nullable shipment_notifications cannot be null');

@@ -308,7 +308,6 @@ class RegistrationNumbers implements ModelInterface, ArrayAccess
     public function setRegistrationNumber($registration_number)
     {
 
-
         if (is_null($registration_number)) {
             throw new \InvalidArgumentException('non-nullable registration_number cannot be null');
         }

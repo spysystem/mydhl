@@ -308,7 +308,6 @@ class ExportLineItems implements ModelInterface, ArrayAccess
     public function setExportLineItem($export_line_item)
     {
 
-
         if (is_null($export_line_item)) {
             throw new \InvalidArgumentException('non-nullable export_line_item cannot be null');
         }

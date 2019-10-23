@@ -421,7 +421,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
     public function setCommodityCode($commodity_code)
     {
 
-
         if (is_null($commodity_code)) {
             throw new \InvalidArgumentException('non-nullable commodity_code cannot be null');
         }
@@ -450,7 +449,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
      */
     public function setEccn($eccn)
     {
-
 
         if (is_null($eccn)) {
             throw new \InvalidArgumentException('non-nullable eccn cannot be null');
@@ -490,7 +488,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($export_reason_type)) {
             throw new \InvalidArgumentException('non-nullable export_reason_type cannot be null');
         }
@@ -519,7 +516,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
      */
     public function setItemNumber($item_number)
     {
-
 
         if (is_null($item_number)) {
             throw new \InvalidArgumentException('non-nullable item_number cannot be null');
@@ -550,7 +546,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
     public function setQuantity($quantity)
     {
 
-
         if (is_null($quantity)) {
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
@@ -579,7 +574,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
      */
     public function setQuantityUnitOfMeasurement($quantity_unit_of_measurement)
     {
-
 
         if (is_null($quantity_unit_of_measurement)) {
             throw new \InvalidArgumentException('non-nullable quantity_unit_of_measurement cannot be null');
@@ -610,7 +604,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
     public function setItemDescription($item_description)
     {
 
-
         if (is_null($item_description)) {
             throw new \InvalidArgumentException('non-nullable item_description cannot be null');
         }
@@ -639,7 +632,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
      */
     public function setUnitPrice($unit_price)
     {
-
 
         if (is_null($unit_price)) {
             throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
@@ -670,7 +662,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
     public function setNetWeight($net_weight)
     {
 
-
         if (is_null($net_weight)) {
             throw new \InvalidArgumentException('non-nullable net_weight cannot be null');
         }
@@ -700,7 +691,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
     public function setGrossWeight($gross_weight)
     {
 
-
         if (is_null($gross_weight)) {
             throw new \InvalidArgumentException('non-nullable gross_weight cannot be null');
         }
@@ -729,7 +719,6 @@ class ExportLineItem implements ModelInterface, ArrayAccess
      */
     public function setManufacturingCountryCode($manufacturing_country_code)
     {
-
 
         if (is_null($manufacturing_country_code)) {
             throw new \InvalidArgumentException('non-nullable manufacturing_country_code cannot be null');

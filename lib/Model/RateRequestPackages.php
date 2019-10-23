@@ -308,7 +308,6 @@ class RateRequestPackages implements ModelInterface, ArrayAccess
     public function setRequestedPackages($requested_packages)
     {
 
-
         if (is_null($requested_packages)) {
             throw new \InvalidArgumentException('non-nullable requested_packages cannot be null');
         }

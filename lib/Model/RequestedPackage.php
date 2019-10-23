@@ -326,7 +326,6 @@ class RequestedPackage implements ModelInterface, ArrayAccess
     public function setNumber($number)
     {
 
-
         if (is_null($number)) {
             throw new \InvalidArgumentException('non-nullable number cannot be null');
         }
@@ -355,7 +354,6 @@ class RequestedPackage implements ModelInterface, ArrayAccess
      */
     public function setWeight($weight)
     {
-
 
         if (is_null($weight)) {
             throw new \InvalidArgumentException('non-nullable weight cannot be null');
@@ -386,7 +384,6 @@ class RequestedPackage implements ModelInterface, ArrayAccess
     public function setDimensions($dimensions)
     {
 
-
         if (is_null($dimensions)) {
             throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
         }
@@ -415,7 +412,6 @@ class RequestedPackage implements ModelInterface, ArrayAccess
      */
     public function setCustomerReferences($customer_references)
     {
-
 
         if (is_null($customer_references)) {
             throw new \InvalidArgumentException('non-nullable customer_references cannot be null');

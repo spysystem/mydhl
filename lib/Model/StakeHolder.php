@@ -325,7 +325,6 @@ class StakeHolder implements ModelInterface, ArrayAccess
     public function setContact($contact)
     {
 
-
         if (is_null($contact)) {
             throw new \InvalidArgumentException('non-nullable contact cannot be null');
         }
@@ -355,7 +354,6 @@ class StakeHolder implements ModelInterface, ArrayAccess
     public function setAddress($address)
     {
 
-
         if (is_null($address)) {
             throw new \InvalidArgumentException('non-nullable address cannot be null');
         }
@@ -384,7 +382,6 @@ class StakeHolder implements ModelInterface, ArrayAccess
      */
     public function setRegistrationNumbers($registration_numbers)
     {
-
 
         if (is_null($registration_numbers)) {
             throw new \InvalidArgumentException('non-nullable registration_numbers cannot be null');

@@ -336,7 +336,6 @@ class SpecialService implements ModelInterface, ArrayAccess
     public function setServiceType($service_type)
     {
 
-
         if (is_null($service_type)) {
             throw new \InvalidArgumentException('non-nullable service_type cannot be null');
         }
@@ -365,7 +364,6 @@ class SpecialService implements ModelInterface, ArrayAccess
      */
     public function setLocalServiceType($local_service_type)
     {
-
 
         if (is_null($local_service_type)) {
             throw new \InvalidArgumentException('non-nullable local_service_type cannot be null');
@@ -396,7 +394,6 @@ class SpecialService implements ModelInterface, ArrayAccess
     public function setServiceValue($service_value)
     {
 
-
         if (is_null($service_value)) {
             throw new \InvalidArgumentException('non-nullable service_value cannot be null');
         }
@@ -426,7 +423,6 @@ class SpecialService implements ModelInterface, ArrayAccess
     public function setCurrencyCode($currency_code)
     {
 
-
         if (is_null($currency_code)) {
             throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
         }
@@ -455,7 +451,6 @@ class SpecialService implements ModelInterface, ArrayAccess
      */
     public function setPaymentCode($payment_code)
     {
-
 
         if (is_null($payment_code)) {
             throw new \InvalidArgumentException('non-nullable payment_code cannot be null');

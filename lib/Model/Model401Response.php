@@ -312,7 +312,6 @@ class Model401Response implements ModelInterface, ArrayAccess
     public function setReasons($reasons)
     {
 
-
         if (is_null($reasons)) {
             throw new \InvalidArgumentException('non-nullable reasons cannot be null');
         }
@@ -341,7 +340,6 @@ class Model401Response implements ModelInterface, ArrayAccess
      */
     public function setDetails($details)
     {
-
 
         if (is_null($details)) {
             throw new \InvalidArgumentException('non-nullable details cannot be null');

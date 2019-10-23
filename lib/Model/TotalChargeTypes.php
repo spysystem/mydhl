@@ -319,7 +319,6 @@ class TotalChargeTypes implements ModelInterface, ArrayAccess
     public function setType($type)
     {
 
-
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
@@ -349,7 +348,6 @@ class TotalChargeTypes implements ModelInterface, ArrayAccess
     public function setCurrency($currency)
     {
 
-
         if (is_null($currency)) {
             throw new \InvalidArgumentException('non-nullable currency cannot be null');
         }
@@ -378,7 +376,6 @@ class TotalChargeTypes implements ModelInterface, ArrayAccess
      */
     public function setTotalChargeType($total_charge_type)
     {
-
 
         if (is_null($total_charge_type)) {
             throw new \InvalidArgumentException('non-nullable total_charge_type cannot be null');

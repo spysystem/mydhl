@@ -305,7 +305,6 @@ class Details implements ModelInterface, ArrayAccess
     public function setMsgId($msg_id)
     {
 
-
         if (is_null($msg_id)) {
             throw new \InvalidArgumentException('non-nullable msg_id cannot be null');
         }

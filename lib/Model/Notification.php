@@ -318,7 +318,6 @@ class Notification implements ModelInterface, ArrayAccess
     public function setCode($code)
     {
 
-
         if (is_null($code)) {
             throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
@@ -347,7 +346,6 @@ class Notification implements ModelInterface, ArrayAccess
      */
     public function setMessage($message)
     {
-
 
         if (is_null($message)) {
             throw new \InvalidArgumentException('non-nullable message cannot be null');

@@ -339,7 +339,6 @@ class Ship implements ModelInterface, ArrayAccess
     public function setShipper($shipper)
     {
 
-
         if (is_null($shipper)) {
             throw new \InvalidArgumentException('non-nullable shipper cannot be null');
         }
@@ -368,7 +367,6 @@ class Ship implements ModelInterface, ArrayAccess
      */
     public function setPickup($pickup)
     {
-
 
         if (is_null($pickup)) {
             throw new \InvalidArgumentException('non-nullable pickup cannot be null');
@@ -399,7 +397,6 @@ class Ship implements ModelInterface, ArrayAccess
     public function setBookingRequestor($booking_requestor)
     {
 
-
         if (is_null($booking_requestor)) {
             throw new \InvalidArgumentException('non-nullable booking_requestor cannot be null');
         }
@@ -429,7 +426,6 @@ class Ship implements ModelInterface, ArrayAccess
     public function setBuyer($buyer)
     {
 
-
         if (is_null($buyer)) {
             throw new \InvalidArgumentException('non-nullable buyer cannot be null');
         }
@@ -458,7 +454,6 @@ class Ship implements ModelInterface, ArrayAccess
      */
     public function setRecipient($recipient)
     {
-
 
         if (is_null($recipient)) {
             throw new \InvalidArgumentException('non-nullable recipient cannot be null');

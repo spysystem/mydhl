@@ -328,7 +328,6 @@ class Document implements ModelInterface, ArrayAccess
     public function setDocumentName($document_name)
     {
 
-
         if (is_null($document_name)) {
             throw new \InvalidArgumentException('non-nullable document_name cannot be null');
         }
@@ -358,7 +357,6 @@ class Document implements ModelInterface, ArrayAccess
     public function setDocumentFormat($document_format)
     {
 
-
         if (is_null($document_format)) {
             throw new \InvalidArgumentException('non-nullable document_format cannot be null');
         }
@@ -387,7 +385,6 @@ class Document implements ModelInterface, ArrayAccess
      */
     public function setDocumentImage($document_image)
     {
-
 
         if (is_null($document_image)) {
             throw new \InvalidArgumentException('non-nullable document_image cannot be null');

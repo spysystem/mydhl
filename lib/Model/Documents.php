@@ -308,7 +308,6 @@ class Documents implements ModelInterface, ArrayAccess
     public function setDocument($document)
     {
 
-
         if (is_null($document)) {
             throw new \InvalidArgumentException('non-nullable document cannot be null');
         }

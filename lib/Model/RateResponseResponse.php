@@ -308,7 +308,6 @@ class RateResponseResponse implements ModelInterface, ArrayAccess
     public function setRateResponse($rate_response)
     {
 
-
         if (is_null($rate_response)) {
             throw new \InvalidArgumentException('non-nullable rate_response cannot be null');
         }

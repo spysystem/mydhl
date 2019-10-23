@@ -398,7 +398,6 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($delivery_option)) {
             throw new \InvalidArgumentException('non-nullable delivery_option cannot be null');
         }
@@ -427,7 +426,6 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
      */
     public function setLocation($location)
     {
-
 
         if (is_null($location)) {
             throw new \InvalidArgumentException('non-nullable location cannot be null');
@@ -458,7 +456,6 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
     public function setInstructions($instructions)
     {
 
-
         if (is_null($instructions)) {
             throw new \InvalidArgumentException('non-nullable instructions cannot be null');
         }
@@ -487,7 +484,6 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
      */
     public function setGateCode($gate_code)
     {
-
 
         if (is_null($gate_code)) {
             throw new \InvalidArgumentException('non-nullable gate_code cannot be null');
@@ -518,7 +514,6 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
     public function setLwnTypeCode($lwn_type_code)
     {
 
-
         if (is_null($lwn_type_code)) {
             throw new \InvalidArgumentException('non-nullable lwn_type_code cannot be null');
         }
@@ -547,7 +542,6 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
      */
     public function setNeighbourName($neighbour_name)
     {
-
 
         if (is_null($neighbour_name)) {
             throw new \InvalidArgumentException('non-nullable neighbour_name cannot be null');
@@ -578,7 +572,6 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
     public function setNeighbourHouseNumber($neighbour_house_number)
     {
 
-
         if (is_null($neighbour_house_number)) {
             throw new \InvalidArgumentException('non-nullable neighbour_house_number cannot be null');
         }
@@ -608,7 +601,6 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
     public function setAuthorizerName($authorizer_name)
     {
 
-
         if (is_null($authorizer_name)) {
             throw new \InvalidArgumentException('non-nullable authorizer_name cannot be null');
         }
@@ -637,7 +629,6 @@ class OnDemandDeliveryOptions implements ModelInterface, ArrayAccess
      */
     public function setSelectedServicePointId($selected_service_point_id)
     {
-
 
         if (is_null($selected_service_point_id)) {
             throw new \InvalidArgumentException('non-nullable selected_service_point_id cannot be null');

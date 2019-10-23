@@ -318,7 +318,6 @@ class ResponseContact implements ModelInterface, ArrayAccess
     public function setPersonName($person_name)
     {
 
-
         if (is_null($person_name)) {
             throw new \InvalidArgumentException('non-nullable person_name cannot be null');
         }
@@ -347,7 +346,6 @@ class ResponseContact implements ModelInterface, ArrayAccess
      */
     public function setCompanyName($company_name)
     {
-
 
         if (is_null($company_name)) {
             throw new \InvalidArgumentException('non-nullable company_name cannot be null');

@@ -305,7 +305,6 @@ class Reason implements ModelInterface, ArrayAccess
     public function setMsg($msg)
     {
 
-
         if (is_null($msg)) {
             throw new \InvalidArgumentException('non-nullable msg cannot be null');
         }

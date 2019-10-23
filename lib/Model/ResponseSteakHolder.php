@@ -318,7 +318,6 @@ class ResponseSteakHolder implements ModelInterface, ArrayAccess
     public function setContact($contact)
     {
 
-
         if (is_null($contact)) {
             throw new \InvalidArgumentException('non-nullable contact cannot be null');
         }
@@ -347,7 +346,6 @@ class ResponseSteakHolder implements ModelInterface, ArrayAccess
      */
     public function setAddress($address)
     {
-
 
         if (is_null($address)) {
             throw new \InvalidArgumentException('non-nullable address cannot be null');

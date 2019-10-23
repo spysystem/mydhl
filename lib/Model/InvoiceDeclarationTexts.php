@@ -308,7 +308,6 @@ class InvoiceDeclarationTexts implements ModelInterface, ArrayAccess
     public function setInvoiceDeclarationText($invoice_declaration_text)
     {
 
-
         if (is_null($invoice_declaration_text)) {
             throw new \InvalidArgumentException('non-nullable invoice_declaration_text cannot be null');
         }

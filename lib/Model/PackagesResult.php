@@ -308,7 +308,6 @@ class PackagesResult implements ModelInterface, ArrayAccess
     public function setPackageResult($package_result)
     {
 
-
         if (is_null($package_result)) {
             throw new \InvalidArgumentException('non-nullable package_result cannot be null');
         }

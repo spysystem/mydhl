@@ -357,7 +357,6 @@ class InternationalDetail implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($content)) {
             throw new \InvalidArgumentException('non-nullable content cannot be null');
         }
@@ -387,7 +386,6 @@ class InternationalDetail implements ModelInterface, ArrayAccess
     public function setCommodities($commodities)
     {
 
-
         if (is_null($commodities)) {
             throw new \InvalidArgumentException('non-nullable commodities cannot be null');
         }
@@ -416,7 +414,6 @@ class InternationalDetail implements ModelInterface, ArrayAccess
      */
     public function setExportDeclaration($export_declaration)
     {
-
 
         if (is_null($export_declaration)) {
             throw new \InvalidArgumentException('non-nullable export_declaration cannot be null');

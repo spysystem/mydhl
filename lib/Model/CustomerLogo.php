@@ -345,7 +345,6 @@ class CustomerLogo implements ModelInterface, ArrayAccess
     public function setLogoImage($logo_image)
     {
 
-
         if (is_null($logo_image)) {
             throw new \InvalidArgumentException('non-nullable logo_image cannot be null');
         }
@@ -383,7 +382,6 @@ class CustomerLogo implements ModelInterface, ArrayAccess
                 )
             );
         }
-
 
         if (is_null($logo_image_format)) {
             throw new \InvalidArgumentException('non-nullable logo_image_format cannot be null');

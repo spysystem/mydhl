@@ -350,7 +350,6 @@ class Billing implements ModelInterface, ArrayAccess
     public function setShipperAccountNumber($shipper_account_number)
     {
 
-
         if (is_null($shipper_account_number)) {
             throw new \InvalidArgumentException('non-nullable shipper_account_number cannot be null');
         }
@@ -389,7 +388,6 @@ class Billing implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($shipping_payment_type)) {
             throw new \InvalidArgumentException('non-nullable shipping_payment_type cannot be null');
         }
@@ -418,7 +416,6 @@ class Billing implements ModelInterface, ArrayAccess
      */
     public function setBillingAccountNumber($billing_account_number)
     {
-
 
         if (is_null($billing_account_number)) {
             throw new \InvalidArgumentException('non-nullable billing_account_number cannot be null');

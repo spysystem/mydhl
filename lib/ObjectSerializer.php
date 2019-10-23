@@ -75,7 +75,7 @@ class ObjectSerializer
                         $imploded = implode("', '", $openAPIType::getAllowableEnumValues());
                         throw new \InvalidArgumentException("Invalid value for enum '$openAPIType', must be one of: '$imploded'");
                     }
-                    if ($data::isNullable($property) && $data->isNullableSetToNull($property) || $value !== null) {
+                    if (($data::isNullable($property) && $data->isNullableSetToNull($property)) || $value !== null) {
                         $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $openAPIType, $formats[$property]);
                     }
                 }
@@ -327,7 +327,10 @@ class ObjectSerializer
                 }
 
                 if (!isset($data->{$instance::attributeMap()[$property]})) {
-                    $instance->$propertySetter(null);
+                    if($instance::isNullable($property)) {
+                        $instance->$propertySetter(null);
+                    }
+
                     continue;
                 }
 

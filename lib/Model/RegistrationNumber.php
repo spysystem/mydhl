@@ -377,7 +377,6 @@ class RegistrationNumber implements ModelInterface, ArrayAccess
     public function setNumber($number)
     {
 
-
         if (is_null($number)) {
             throw new \InvalidArgumentException('non-nullable number cannot be null');
         }
@@ -416,7 +415,6 @@ class RegistrationNumber implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($number_type_code)) {
             throw new \InvalidArgumentException('non-nullable number_type_code cannot be null');
         }
@@ -445,7 +443,6 @@ class RegistrationNumber implements ModelInterface, ArrayAccess
      */
     public function setNumberIssuerCountryCode($number_issuer_country_code)
     {
-
 
         if (is_null($number_issuer_country_code)) {
             throw new \InvalidArgumentException('non-nullable number_issuer_country_code cannot be null');

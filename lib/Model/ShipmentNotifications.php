@@ -308,7 +308,6 @@ class ShipmentNotifications implements ModelInterface, ArrayAccess
     public function setShipmentNotification($shipment_notification)
     {
 
-
         if (is_null($shipment_notification)) {
             throw new \InvalidArgumentException('non-nullable shipment_notification cannot be null');
         }

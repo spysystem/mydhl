@@ -305,7 +305,6 @@ class SpecialServices implements ModelInterface, ArrayAccess
     public function setService($service)
     {
 
-
         if (is_null($service)) {
             throw new \InvalidArgumentException('non-nullable service cannot be null');
         }

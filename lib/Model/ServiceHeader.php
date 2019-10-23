@@ -322,7 +322,6 @@ class ServiceHeader implements ModelInterface, ArrayAccess
     public function setMessageTime($message_time)
     {
 
-
         if (is_null($message_time)) {
             throw new \InvalidArgumentException('non-nullable message_time cannot be null');
         }
@@ -352,7 +351,6 @@ class ServiceHeader implements ModelInterface, ArrayAccess
     public function setMessageReference($message_reference)
     {
 
-
         if (is_null($message_reference)) {
             throw new \InvalidArgumentException('non-nullable message_reference cannot be null');
         }
@@ -381,7 +379,6 @@ class ServiceHeader implements ModelInterface, ArrayAccess
      */
     public function setServiceInvocationId($service_invocation_id)
     {
-
 
         if (is_null($service_invocation_id)) {
             throw new \InvalidArgumentException('non-nullable service_invocation_id cannot be null');

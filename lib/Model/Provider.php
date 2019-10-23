@@ -326,7 +326,6 @@ class Provider implements ModelInterface, ArrayAccess
     public function setCode($code)
     {
 
-
         if (is_null($code)) {
             throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
@@ -355,7 +354,6 @@ class Provider implements ModelInterface, ArrayAccess
      */
     public function setServiceHeader($service_header)
     {
-
 
         if (is_null($service_header)) {
             throw new \InvalidArgumentException('non-nullable service_header cannot be null');
@@ -386,7 +384,6 @@ class Provider implements ModelInterface, ArrayAccess
     public function setNotification($notification)
     {
 
-
         if (is_null($notification)) {
             throw new \InvalidArgumentException('non-nullable notification cannot be null');
         }
@@ -415,7 +412,6 @@ class Provider implements ModelInterface, ArrayAccess
      */
     public function setService($service)
     {
-
 
         if (is_null($service)) {
             throw new \InvalidArgumentException('non-nullable service cannot be null');

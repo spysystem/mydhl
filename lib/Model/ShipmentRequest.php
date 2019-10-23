@@ -308,7 +308,6 @@ class ShipmentRequest implements ModelInterface, ArrayAccess
     public function setRequestedShipment($requested_shipment)
     {
 
-
         if (is_null($requested_shipment)) {
             throw new \InvalidArgumentException('non-nullable requested_shipment cannot be null');
         }

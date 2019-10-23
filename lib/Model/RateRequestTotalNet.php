@@ -319,7 +319,6 @@ class RateRequestTotalNet implements ModelInterface, ArrayAccess
     public function setCurrency($currency)
     {
 
-
         if (is_null($currency)) {
             throw new \InvalidArgumentException('non-nullable currency cannot be null');
         }
@@ -349,7 +348,6 @@ class RateRequestTotalNet implements ModelInterface, ArrayAccess
     public function setAmount($amount)
     {
 
-
         if (is_null($amount)) {
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
@@ -378,7 +376,6 @@ class RateRequestTotalNet implements ModelInterface, ArrayAccess
      */
     public function setType($type)
     {
-
 
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');

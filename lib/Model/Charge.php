@@ -374,7 +374,6 @@ class Charge implements ModelInterface, ArrayAccess
     public function setChargeCode($charge_code)
     {
 
-
         if (is_null($charge_code)) {
             throw new \InvalidArgumentException('non-nullable charge_code cannot be null');
         }
@@ -403,7 +402,6 @@ class Charge implements ModelInterface, ArrayAccess
      */
     public function setLocalChargeCode($local_charge_code)
     {
-
 
         if (is_null($local_charge_code)) {
             throw new \InvalidArgumentException('non-nullable local_charge_code cannot be null');
@@ -434,7 +432,6 @@ class Charge implements ModelInterface, ArrayAccess
     public function setChargeType($charge_type)
     {
 
-
         if (is_null($charge_type)) {
             throw new \InvalidArgumentException('non-nullable charge_type cannot be null');
         }
@@ -463,7 +460,6 @@ class Charge implements ModelInterface, ArrayAccess
      */
     public function setChargeAmount($charge_amount)
     {
-
 
         if (is_null($charge_amount)) {
             throw new \InvalidArgumentException('non-nullable charge_amount cannot be null');
@@ -494,7 +490,6 @@ class Charge implements ModelInterface, ArrayAccess
     public function setChargeName($charge_name)
     {
 
-
         if (is_null($charge_name)) {
             throw new \InvalidArgumentException('non-nullable charge_name cannot be null');
         }
@@ -523,7 +518,6 @@ class Charge implements ModelInterface, ArrayAccess
      */
     public function setChargeCurrencyCode($charge_currency_code)
     {
-
 
         if (is_null($charge_currency_code)) {
             throw new \InvalidArgumentException('non-nullable charge_currency_code cannot be null');
@@ -554,7 +548,6 @@ class Charge implements ModelInterface, ArrayAccess
     public function setChargeCodeTypeCode($charge_code_type_code)
     {
 
-
         if (is_null($charge_code_type_code)) {
             throw new \InvalidArgumentException('non-nullable charge_code_type_code cannot be null');
         }
@@ -583,7 +576,6 @@ class Charge implements ModelInterface, ArrayAccess
      */
     public function setBillingServiceInd($billing_service_ind)
     {
-
 
         if (is_null($billing_service_ind)) {
             throw new \InvalidArgumentException('non-nullable billing_service_ind cannot be null');
@@ -614,7 +606,6 @@ class Charge implements ModelInterface, ArrayAccess
     public function setCustomerAggreementInd($customer_aggreement_ind)
     {
 
-
         if (is_null($customer_aggreement_ind)) {
             throw new \InvalidArgumentException('non-nullable customer_aggreement_ind cannot be null');
         }
@@ -643,7 +634,6 @@ class Charge implements ModelInterface, ArrayAccess
      */
     public function setMarketedServiceInd($marketed_service_ind)
     {
-
 
         if (is_null($marketed_service_ind)) {
             throw new \InvalidArgumentException('non-nullable marketed_service_ind cannot be null');

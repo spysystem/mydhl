@@ -305,7 +305,6 @@ class Response implements ModelInterface, ArrayAccess
     public function setServiceHeader($service_header)
     {
 
-
         if (is_null($service_header)) {
             throw new \InvalidArgumentException('non-nullable service_header cannot be null');
         }

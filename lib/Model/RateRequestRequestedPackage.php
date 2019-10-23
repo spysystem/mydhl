@@ -335,7 +335,6 @@ class RateRequestRequestedPackage implements ModelInterface, ArrayAccess
     public function setNumber($number)
     {
 
-
         if (is_null($number)) {
             throw new \InvalidArgumentException('non-nullable number cannot be null');
         }
@@ -364,7 +363,6 @@ class RateRequestRequestedPackage implements ModelInterface, ArrayAccess
      */
     public function setPackageTypeCode($package_type_code)
     {
-
 
         if (is_null($package_type_code)) {
             throw new \InvalidArgumentException('non-nullable package_type_code cannot be null');
@@ -395,7 +393,6 @@ class RateRequestRequestedPackage implements ModelInterface, ArrayAccess
     public function setWeight($weight)
     {
 
-
         if (is_null($weight)) {
             throw new \InvalidArgumentException('non-nullable weight cannot be null');
         }
@@ -424,7 +421,6 @@ class RateRequestRequestedPackage implements ModelInterface, ArrayAccess
      */
     public function setDimensions($dimensions)
     {
-
 
         if (is_null($dimensions)) {
             throw new \InvalidArgumentException('non-nullable dimensions cannot be null');

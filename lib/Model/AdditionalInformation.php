@@ -378,7 +378,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
     public function setBillingCode($billing_code)
     {
 
-
         if (is_null($billing_code)) {
             throw new \InvalidArgumentException('non-nullable billing_code cannot be null');
         }
@@ -407,7 +406,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
      */
     public function setVolumetricWeight($volumetric_weight)
     {
-
 
         if (is_null($volumetric_weight)) {
             throw new \InvalidArgumentException('non-nullable volumetric_weight cannot be null');
@@ -438,7 +436,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
     public function setCutOffTime($cut_off_time)
     {
 
-
         if (is_null($cut_off_time)) {
             throw new \InvalidArgumentException('non-nullable cut_off_time cannot be null');
         }
@@ -467,7 +464,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
      */
     public function setDhlRoutingCode($dhl_routing_code)
     {
-
 
         if (is_null($dhl_routing_code)) {
             throw new \InvalidArgumentException('non-nullable dhl_routing_code cannot be null');
@@ -498,7 +494,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
     public function setDhlRoutingDataId($dhl_routing_data_id)
     {
 
-
         if (is_null($dhl_routing_data_id)) {
             throw new \InvalidArgumentException('non-nullable dhl_routing_data_id cannot be null');
         }
@@ -527,7 +522,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
      */
     public function setServiceContentCode($service_content_code)
     {
-
 
         if (is_null($service_content_code)) {
             throw new \InvalidArgumentException('non-nullable service_content_code cannot be null');
@@ -558,7 +552,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
     public function setDeliveryDateCode($delivery_date_code)
     {
 
-
         if (is_null($delivery_date_code)) {
             throw new \InvalidArgumentException('non-nullable delivery_date_code cannot be null');
         }
@@ -587,7 +580,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
      */
     public function setDeliveryTimeCode($delivery_time_code)
     {
-
 
         if (is_null($delivery_time_code)) {
             throw new \InvalidArgumentException('non-nullable delivery_time_code cannot be null');
@@ -618,7 +610,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
     public function setOriginServiceArea($origin_service_area)
     {
 
-
         if (is_null($origin_service_area)) {
             throw new \InvalidArgumentException('non-nullable origin_service_area cannot be null');
         }
@@ -648,7 +639,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
     public function setDestinationServiceArea($destination_service_area)
     {
 
-
         if (is_null($destination_service_area)) {
             throw new \InvalidArgumentException('non-nullable destination_service_area cannot be null');
         }
@@ -677,7 +667,6 @@ class AdditionalInformation implements ModelInterface, ArrayAccess
      */
     public function setShip($ship)
     {
-
 
         if (is_null($ship)) {
             throw new \InvalidArgumentException('non-nullable ship cannot be null');

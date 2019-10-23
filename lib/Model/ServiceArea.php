@@ -319,7 +319,6 @@ class ServiceArea implements ModelInterface, ArrayAccess
     public function setFacilityCode($facility_code)
     {
 
-
         if (is_null($facility_code)) {
             throw new \InvalidArgumentException('non-nullable facility_code cannot be null');
         }
@@ -349,7 +348,6 @@ class ServiceArea implements ModelInterface, ArrayAccess
     public function setServiceAreaCode($service_area_code)
     {
 
-
         if (is_null($service_area_code)) {
             throw new \InvalidArgumentException('non-nullable service_area_code cannot be null');
         }
@@ -378,7 +376,6 @@ class ServiceArea implements ModelInterface, ArrayAccess
      */
     public function setInboundSortCode($inbound_sort_code)
     {
-
 
         if (is_null($inbound_sort_code)) {
             throw new \InvalidArgumentException('non-nullable inbound_sort_code cannot be null');

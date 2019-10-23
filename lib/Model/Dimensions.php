@@ -319,7 +319,6 @@ class Dimensions implements ModelInterface, ArrayAccess
     public function setLength($length)
     {
 
-
         if (is_null($length)) {
             throw new \InvalidArgumentException('non-nullable length cannot be null');
         }
@@ -349,7 +348,6 @@ class Dimensions implements ModelInterface, ArrayAccess
     public function setWidth($width)
     {
 
-
         if (is_null($width)) {
             throw new \InvalidArgumentException('non-nullable width cannot be null');
         }
@@ -378,7 +376,6 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     public function setHeight($height)
     {
-
 
         if (is_null($height)) {
             throw new \InvalidArgumentException('non-nullable height cannot be null');

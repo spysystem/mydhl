@@ -305,7 +305,6 @@ class RateResponse implements ModelInterface, ArrayAccess
     public function setProvider($provider)
     {
 
-
         if (is_null($provider)) {
             throw new \InvalidArgumentException('non-nullable provider cannot be null');
         }

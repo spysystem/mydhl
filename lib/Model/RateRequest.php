@@ -336,7 +336,6 @@ class RateRequest implements ModelInterface, ArrayAccess
             }
         }
 
-
         $this->container['client_details'] = $client_details;
 
         return $this;
@@ -361,7 +360,6 @@ class RateRequest implements ModelInterface, ArrayAccess
      */
     public function setRequest($request)
     {
-
 
         if (is_null($request)) {
             throw new \InvalidArgumentException('non-nullable request cannot be null');
@@ -391,7 +389,6 @@ class RateRequest implements ModelInterface, ArrayAccess
      */
     public function setRequestedShipment($requested_shipment)
     {
-
 
         if (is_null($requested_shipment)) {
             throw new \InvalidArgumentException('non-nullable requested_shipment cannot be null');

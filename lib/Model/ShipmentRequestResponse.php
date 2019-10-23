@@ -371,7 +371,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
     public function setShipmentIdentificationNumber($shipment_identification_number)
     {
 
-
         if (is_null($shipment_identification_number)) {
             throw new \InvalidArgumentException('non-nullable shipment_identification_number cannot be null');
         }
@@ -400,7 +399,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
      */
     public function setDispatchConfirmationNumber($dispatch_confirmation_number)
     {
-
 
         if (is_null($dispatch_confirmation_number)) {
             throw new \InvalidArgumentException('non-nullable dispatch_confirmation_number cannot be null');
@@ -431,7 +429,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
     public function setOnDemandDeliveryUrl($on_demand_delivery_url)
     {
 
-
         if (is_null($on_demand_delivery_url)) {
             throw new \InvalidArgumentException('non-nullable on_demand_delivery_url cannot be null');
         }
@@ -460,7 +457,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
      */
     public function setResponse($response)
     {
-
 
         if (is_null($response)) {
             throw new \InvalidArgumentException('non-nullable response cannot be null');
@@ -491,7 +487,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
     public function setNotification($notification)
     {
 
-
         if (is_null($notification)) {
             throw new \InvalidArgumentException('non-nullable notification cannot be null');
         }
@@ -520,7 +515,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
      */
     public function setPackagesResult($packages_result)
     {
-
 
         if (is_null($packages_result)) {
             throw new \InvalidArgumentException('non-nullable packages_result cannot be null');
@@ -551,7 +545,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
     public function setLabelImage($label_image)
     {
 
-
         if (is_null($label_image)) {
             throw new \InvalidArgumentException('non-nullable label_image cannot be null');
         }
@@ -580,7 +573,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
      */
     public function setDocuments($documents)
     {
-
 
         if (is_null($documents)) {
             throw new \InvalidArgumentException('non-nullable documents cannot be null');
@@ -611,7 +603,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
     public function setTotalNet($total_net)
     {
 
-
         if (is_null($total_net)) {
             throw new \InvalidArgumentException('non-nullable total_net cannot be null');
         }
@@ -640,7 +631,6 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
      */
     public function setAdditionalInformation($additional_information)
     {
-
 
         if (is_null($additional_information)) {
             throw new \InvalidArgumentException('non-nullable additional_information cannot be null');

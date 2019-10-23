@@ -339,7 +339,6 @@ class Contact implements ModelInterface, ArrayAccess
     public function setPersonName($person_name)
     {
 
-
         if (is_null($person_name)) {
             throw new \InvalidArgumentException('non-nullable person_name cannot be null');
         }
@@ -368,7 +367,6 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function setCompanyName($company_name)
     {
-
 
         if (is_null($company_name)) {
             throw new \InvalidArgumentException('non-nullable company_name cannot be null');
@@ -399,7 +397,6 @@ class Contact implements ModelInterface, ArrayAccess
     public function setPhoneNumber($phone_number)
     {
 
-
         if (is_null($phone_number)) {
             throw new \InvalidArgumentException('non-nullable phone_number cannot be null');
         }
@@ -429,7 +426,6 @@ class Contact implements ModelInterface, ArrayAccess
     public function setEmailAddress($email_address)
     {
 
-
         if (is_null($email_address)) {
             throw new \InvalidArgumentException('non-nullable email_address cannot be null');
         }
@@ -458,7 +454,6 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function setMobilePhoneNumber($mobile_phone_number)
     {
-
 
         if (is_null($mobile_phone_number)) {
             throw new \InvalidArgumentException('non-nullable mobile_phone_number cannot be null');

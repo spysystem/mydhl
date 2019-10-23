@@ -562,7 +562,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($drop_off_type)) {
             throw new \InvalidArgumentException('non-nullable drop_off_type cannot be null');
         }
@@ -591,7 +590,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setServiceType($service_type)
     {
-
 
         if (is_null($service_type)) {
             throw new \InvalidArgumentException('non-nullable service_type cannot be null');
@@ -622,7 +620,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
     public function setLocalServiceType($local_service_type)
     {
 
-
         if (is_null($local_service_type)) {
             throw new \InvalidArgumentException('non-nullable local_service_type cannot be null');
         }
@@ -652,7 +649,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
     public function setAccount($account)
     {
 
-
         if (is_null($account)) {
             throw new \InvalidArgumentException('non-nullable account cannot be null');
         }
@@ -681,7 +677,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setCurrency($currency)
     {
-
 
         if (is_null($currency)) {
             throw new \InvalidArgumentException('non-nullable currency cannot be null');
@@ -721,7 +716,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($unit_of_measurement)) {
             throw new \InvalidArgumentException('non-nullable unit_of_measurement cannot be null');
         }
@@ -751,7 +745,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
     public function setShipmentIdentificationNumber($shipment_identification_number)
     {
 
-
         if (is_null($shipment_identification_number)) {
             throw new \InvalidArgumentException('non-nullable shipment_identification_number cannot be null');
         }
@@ -780,7 +773,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setUseOwnShipmentIdentificationNumber($use_own_shipment_identification_number)
     {
-
 
         if (is_null($use_own_shipment_identification_number)) {
             throw new \InvalidArgumentException('non-nullable use_own_shipment_identification_number cannot be null');
@@ -820,7 +812,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($label_type)) {
             throw new \InvalidArgumentException('non-nullable label_type cannot be null');
         }
@@ -849,7 +840,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setLabelTemplate($label_template)
     {
-
 
         if (is_null($label_template)) {
             throw new \InvalidArgumentException('non-nullable label_template cannot be null');
@@ -880,7 +870,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
     public function setArchiveLabelTemplate($archive_label_template)
     {
 
-
         if (is_null($archive_label_template)) {
             throw new \InvalidArgumentException('non-nullable archive_label_template cannot be null');
         }
@@ -909,7 +898,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setCustomsInvoiceTemplate($customs_invoice_template)
     {
-
 
         if (is_null($customs_invoice_template)) {
             throw new \InvalidArgumentException('non-nullable customs_invoice_template cannot be null');
@@ -940,7 +928,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
     public function setShipmentReceiptTemplate($shipment_receipt_template)
     {
 
-
         if (is_null($shipment_receipt_template)) {
             throw new \InvalidArgumentException('non-nullable shipment_receipt_template cannot be null');
         }
@@ -969,7 +956,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setPaperlessTradeEnabled($paperless_trade_enabled)
     {
-
 
         if (is_null($paperless_trade_enabled)) {
             throw new \InvalidArgumentException('non-nullable paperless_trade_enabled cannot be null');
@@ -1000,7 +986,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
     public function setParentShipmentIdentificationNumber($parent_shipment_identification_number)
     {
 
-
         if (is_null($parent_shipment_identification_number)) {
             throw new \InvalidArgumentException('non-nullable parent_shipment_identification_number cannot be null');
         }
@@ -1029,7 +1014,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setRequestTransliterateResponse($request_transliterate_response)
     {
-
 
         if (is_null($request_transliterate_response)) {
             throw new \InvalidArgumentException('non-nullable request_transliterate_response cannot be null');
@@ -1069,7 +1053,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($request_additional_information)) {
             throw new \InvalidArgumentException('non-nullable request_additional_information cannot be null');
         }
@@ -1098,7 +1081,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setBilling($billing)
     {
-
 
         if (is_null($billing)) {
             throw new \InvalidArgumentException('non-nullable billing cannot be null');
@@ -1129,7 +1111,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
     public function setDocumentImages($document_images)
     {
 
-
         if (is_null($document_images)) {
             throw new \InvalidArgumentException('non-nullable document_images cannot be null');
         }
@@ -1159,7 +1140,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
     public function setLabelOptions($label_options)
     {
 
-
         if (is_null($label_options)) {
             throw new \InvalidArgumentException('non-nullable label_options cannot be null');
         }
@@ -1188,7 +1168,6 @@ class ShipmentInfo implements ModelInterface, ArrayAccess
      */
     public function setSpecialServices($special_services)
     {
-
 
         if (is_null($special_services)) {
             throw new \InvalidArgumentException('non-nullable special_services cannot be null');

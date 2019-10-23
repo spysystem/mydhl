@@ -384,7 +384,6 @@ class DocumentImage implements ModelInterface, ArrayAccess
     public function setDocumentImage($document_image)
     {
 
-
         if (is_null($document_image)) {
             throw new \InvalidArgumentException('non-nullable document_image cannot be null');
         }
@@ -423,7 +422,6 @@ class DocumentImage implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($document_image_type)) {
             throw new \InvalidArgumentException('non-nullable document_image_type cannot be null');
         }
@@ -461,7 +459,6 @@ class DocumentImage implements ModelInterface, ArrayAccess
                 )
             );
         }
-
 
         if (is_null($document_image_format)) {
             throw new \InvalidArgumentException('non-nullable document_image_format cannot be null');

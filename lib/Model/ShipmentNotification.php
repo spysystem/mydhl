@@ -366,7 +366,6 @@ class ShipmentNotification implements ModelInterface, ArrayAccess
             );
         }
 
-
         if (is_null($notification_method)) {
             throw new \InvalidArgumentException('non-nullable notification_method cannot be null');
         }
@@ -395,7 +394,6 @@ class ShipmentNotification implements ModelInterface, ArrayAccess
      */
     public function setEmailAddress($email_address)
     {
-
 
         if (is_null($email_address)) {
             throw new \InvalidArgumentException('non-nullable email_address cannot be null');
@@ -426,7 +424,6 @@ class ShipmentNotification implements ModelInterface, ArrayAccess
     public function setBespokeMessage($bespoke_message)
     {
 
-
         if (is_null($bespoke_message)) {
             throw new \InvalidArgumentException('non-nullable bespoke_message cannot be null');
         }
@@ -456,7 +453,6 @@ class ShipmentNotification implements ModelInterface, ArrayAccess
     public function setLanguageCode($language_code)
     {
 
-
         if (is_null($language_code)) {
             throw new \InvalidArgumentException('non-nullable language_code cannot be null');
         }
@@ -485,7 +481,6 @@ class ShipmentNotification implements ModelInterface, ArrayAccess
      */
     public function setLanguageCountryCode($language_country_code)
     {
-
 
         if (is_null($language_country_code)) {
             throw new \InvalidArgumentException('non-nullable language_country_code cannot be null');
