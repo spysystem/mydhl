@@ -4,7 +4,7 @@ set -e
 
 rm -rf docs lib test
 
-docker pull spysystem/openapi-generator
+docker pull spysystem/openapi-generator:th-spy-master
 docker run \
 	--user $(id -u):$(id -g) \
 	--rm -v ${PWD}:/local spysystem/openapi-generator:th-spy-master generate \
