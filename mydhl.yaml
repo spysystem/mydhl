@@ -669,6 +669,10 @@ definitions:
         $ref: '#/definitions/Packages'
       ShipmentNotifications:
         $ref: '#/definitions/ShipmentNotifications'
+      DeclaredValue:
+        type: number
+      DeclaredValueCurrecyCode:
+        type: string
 
   ShipmentRequest:
     type: object
