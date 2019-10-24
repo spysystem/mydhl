@@ -63,7 +63,7 @@ paths:
         200:
           description: Success
           schema:
-            $ref: '#/definitions/RateResponseResponse'
+            $ref: '#/definitions/RateRequestResponse'
         401:
           $ref: '#/responses/Unauthorized'
 #endregion
@@ -917,7 +917,7 @@ definitions:
       ServiceHeader:
         $ref: '#/definitions/ServiceHeader'
 
-  ShipmentRequestResponse:
+  ShipmentResponse:
     type: object
     required:
       - Notification
@@ -942,6 +942,14 @@ definitions:
         $ref: '#/definitions/TotalNetArray'
       AdditionalInformation:
         $ref: '#/definitions/AdditionalInformation'
+
+  ShipmentRequestResponse:
+    type: object
+    required:
+      - ShipmentResponse
+    properties:
+      RateResponse:
+        $ref: '#/definitions/ShipmentResponse'
 #endregion
 
 #region RateRequestRequest
@@ -1266,7 +1274,7 @@ definitions:
           $ref: '#/definitions/Provider'
 
 
-  RateResponseResponse:
+  RateRequestResponse:
     type: object
     required:
       - RateResponse
