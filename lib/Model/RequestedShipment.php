@@ -69,7 +69,9 @@ class RequestedShipment implements ModelInterface, ArrayAccess
         'on_demand_delivery_options' => '\MyDHL\Model\OnDemandDeliveryOptions',
         'ship' => '\MyDHL\Model\Ship',
         'packages' => '\MyDHL\Model\Packages',
-        'shipment_notifications' => '\MyDHL\Model\ShipmentNotifications'
+        'shipment_notifications' => '\MyDHL\Model\ShipmentNotifications',
+        'declared_value' => 'float',
+        'declared_value_currecy_code' => 'string'
     ];
 
     /**
@@ -90,7 +92,9 @@ class RequestedShipment implements ModelInterface, ArrayAccess
         'on_demand_delivery_options' => null,
         'ship' => null,
         'packages' => null,
-        'shipment_notifications' => null
+        'shipment_notifications' => null,
+        'declared_value' => null,
+        'declared_value_currecy_code' => null
     ];
 
     /**
@@ -111,7 +115,9 @@ class RequestedShipment implements ModelInterface, ArrayAccess
         'on_demand_delivery_options' => false,
         'ship' => false,
         'packages' => false,
-        'shipment_notifications' => false
+        'shipment_notifications' => false,
+        'declared_value' => false,
+        'declared_value_currecy_code' => false
     ];
 
     /**
@@ -214,7 +220,9 @@ class RequestedShipment implements ModelInterface, ArrayAccess
         'on_demand_delivery_options' => 'OnDemandDeliveryOptions',
         'ship' => 'Ship',
         'packages' => 'Packages',
-        'shipment_notifications' => 'ShipmentNotifications'
+        'shipment_notifications' => 'ShipmentNotifications',
+        'declared_value' => 'DeclaredValue',
+        'declared_value_currecy_code' => 'DeclaredValueCurrecyCode'
     ];
 
     /**
@@ -235,7 +243,9 @@ class RequestedShipment implements ModelInterface, ArrayAccess
         'on_demand_delivery_options' => 'setOnDemandDeliveryOptions',
         'ship' => 'setShip',
         'packages' => 'setPackages',
-        'shipment_notifications' => 'setShipmentNotifications'
+        'shipment_notifications' => 'setShipmentNotifications',
+        'declared_value' => 'setDeclaredValue',
+        'declared_value_currecy_code' => 'setDeclaredValueCurrecyCode'
     ];
 
     /**
@@ -256,7 +266,9 @@ class RequestedShipment implements ModelInterface, ArrayAccess
         'on_demand_delivery_options' => 'getOnDemandDeliveryOptions',
         'ship' => 'getShip',
         'packages' => 'getPackages',
-        'shipment_notifications' => 'getShipmentNotifications'
+        'shipment_notifications' => 'getShipmentNotifications',
+        'declared_value' => 'getDeclaredValue',
+        'declared_value_currecy_code' => 'getDeclaredValueCurrecyCode'
     ];
 
     /**
@@ -332,6 +344,8 @@ class RequestedShipment implements ModelInterface, ArrayAccess
         $this->setIfExists('ship', $data, null);
         $this->setIfExists('packages', $data, null);
         $this->setIfExists('shipment_notifications', $data, null);
+        $this->setIfExists('declared_value', $data, null);
+        $this->setIfExists('declared_value_currecy_code', $data, null);
     }
 
     public function setIfExists(string $variableName, $fields, $defaultValue)
@@ -748,6 +762,64 @@ class RequestedShipment implements ModelInterface, ArrayAccess
         }
 
         $this->container['shipment_notifications'] = $shipment_notifications;
+
+        return $this;
+    }
+
+    /**
+     * Gets declared_value
+     *
+     * @return float|null
+     */
+    public function getDeclaredValue()
+    {
+        return $this->container['declared_value'];
+    }
+
+    /**
+     * Sets declared_value
+     *
+     * @param float|null $declared_value declared_value
+     *
+     * @return $this
+     */
+    public function setDeclaredValue($declared_value)
+    {
+
+        if (is_null($declared_value)) {
+            throw new \InvalidArgumentException('non-nullable declared_value cannot be null');
+        }
+
+        $this->container['declared_value'] = $declared_value;
+
+        return $this;
+    }
+
+    /**
+     * Gets declared_value_currecy_code
+     *
+     * @return string|null
+     */
+    public function getDeclaredValueCurrecyCode()
+    {
+        return $this->container['declared_value_currecy_code'];
+    }
+
+    /**
+     * Sets declared_value_currecy_code
+     *
+     * @param string|null $declared_value_currecy_code declared_value_currecy_code
+     *
+     * @return $this
+     */
+    public function setDeclaredValueCurrecyCode($declared_value_currecy_code)
+    {
+
+        if (is_null($declared_value_currecy_code)) {
+            throw new \InvalidArgumentException('non-nullable declared_value_currecy_code cannot be null');
+        }
+
+        $this->container['declared_value_currecy_code'] = $declared_value_currecy_code;
 
         return $this;
     }

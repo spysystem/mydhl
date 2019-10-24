@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **ship** | [**\MyDHL\Model\Ship**](Ship.md) |  | [optional] 
 **packages** | [**\MyDHL\Model\Packages**](Packages.md) |  | [optional] 
 **shipment_notifications** | [**\MyDHL\Model\ShipmentNotifications**](ShipmentNotifications.md) |  | [optional] 
+**declared_value** | **float** |  | [optional] 
+**declared_value_currecy_code** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

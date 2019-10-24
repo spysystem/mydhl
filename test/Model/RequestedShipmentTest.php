@@ -168,4 +168,18 @@ class RequestedShipmentTest extends TestCase
     public function testPropertyShipmentNotifications()
     {
     }
+
+    /**
+     * Test attribute "declared_value"
+     */
+    public function testPropertyDeclaredValue()
+    {
+    }
+
+    /**
+     * Test attribute "declared_value_currecy_code"
+     */
+    public function testPropertyDeclaredValueCurrecyCode()
+    {
+    }
 }
