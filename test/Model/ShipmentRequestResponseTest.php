@@ -79,9 +79,9 @@ class ShipmentRequestResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "rate_response"
+     * Test attribute "shipment_response"
      */
-    public function testPropertyRateResponse()
+    public function testPropertyShipmentResponse()
     {
     }
 }

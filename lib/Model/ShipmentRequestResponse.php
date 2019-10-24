@@ -57,7 +57,7 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'rate_response' => '\MyDHL\Model\ShipmentResponse'
+        'shipment_response' => '\MyDHL\Model\ShipmentResponse'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'rate_response' => null
+        'shipment_response' => null
     ];
 
     /**
@@ -75,7 +75,7 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'rate_response' => false
+        'shipment_response' => false
     ];
 
     /**
@@ -166,7 +166,7 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'rate_response' => 'RateResponse'
+        'shipment_response' => 'ShipmentResponse'
     ];
 
     /**
@@ -175,7 +175,7 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'rate_response' => 'setRateResponse'
+        'shipment_response' => 'setShipmentResponse'
     ];
 
     /**
@@ -184,7 +184,7 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'rate_response' => 'getRateResponse'
+        'shipment_response' => 'getShipmentResponse'
     ];
 
     /**
@@ -247,7 +247,7 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('rate_response', $data, null);
+        $this->setIfExists('shipment_response', $data, null);
     }
 
     public function setIfExists(string $variableName, $fields, $defaultValue)
@@ -270,6 +270,9 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['shipment_response'] === null) {
+            $invalidProperties[] = "'shipment_response' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -286,30 +289,30 @@ class ShipmentRequestResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets rate_response
+     * Gets shipment_response
      *
-     * @return \MyDHL\Model\ShipmentResponse|null
+     * @return \MyDHL\Model\ShipmentResponse
      */
-    public function getRateResponse()
+    public function getShipmentResponse()
     {
-        return $this->container['rate_response'];
+        return $this->container['shipment_response'];
     }
 
     /**
-     * Sets rate_response
+     * Sets shipment_response
      *
-     * @param \MyDHL\Model\ShipmentResponse|null $rate_response rate_response
+     * @param \MyDHL\Model\ShipmentResponse $shipment_response shipment_response
      *
      * @return $this
      */
-    public function setRateResponse($rate_response)
+    public function setShipmentResponse($shipment_response)
     {
 
-        if (is_null($rate_response)) {
-            throw new \InvalidArgumentException('non-nullable rate_response cannot be null');
+        if (is_null($shipment_response)) {
+            throw new \InvalidArgumentException('non-nullable shipment_response cannot be null');
         }
 
-        $this->container['rate_response'] = $rate_response;
+        $this->container['shipment_response'] = $shipment_response;
 
         return $this;
     }
