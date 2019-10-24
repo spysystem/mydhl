@@ -79,72 +79,9 @@ class ShipmentRequestResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "shipment_identification_number"
+     * Test attribute "rate_response"
      */
-    public function testPropertyShipmentIdentificationNumber()
-    {
-    }
-
-    /**
-     * Test attribute "dispatch_confirmation_number"
-     */
-    public function testPropertyDispatchConfirmationNumber()
-    {
-    }
-
-    /**
-     * Test attribute "on_demand_delivery_url"
-     */
-    public function testPropertyOnDemandDeliveryUrl()
-    {
-    }
-
-    /**
-     * Test attribute "response"
-     */
-    public function testPropertyResponse()
-    {
-    }
-
-    /**
-     * Test attribute "notification"
-     */
-    public function testPropertyNotification()
-    {
-    }
-
-    /**
-     * Test attribute "packages_result"
-     */
-    public function testPropertyPackagesResult()
-    {
-    }
-
-    /**
-     * Test attribute "label_image"
-     */
-    public function testPropertyLabelImage()
-    {
-    }
-
-    /**
-     * Test attribute "documents"
-     */
-    public function testPropertyDocuments()
-    {
-    }
-
-    /**
-     * Test attribute "total_net"
-     */
-    public function testPropertyTotalNet()
-    {
-    }
-
-    /**
-     * Test attribute "additional_information"
-     */
-    public function testPropertyAdditionalInformation()
+    public function testPropertyRateResponse()
     {
     }
 }

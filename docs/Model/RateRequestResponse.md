@@ -1,4 +1,4 @@
-# # RateResponseResponse
+# # RateRequestResponse
 
 ## Properties
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * RateResponseResponse
+ * RateRequestResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \MyDHL\ObjectSerializer;
 
 /**
- * RateResponseResponse Class Doc Comment
+ * RateRequestResponse Class Doc Comment
  *
  * @category Class
  * @package  MyDHL
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class RateResponseResponse implements ModelInterface, ArrayAccess
+class RateRequestResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RateResponseResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RateResponseResponse';
+    protected static $openAPIModelName = 'RateRequestResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

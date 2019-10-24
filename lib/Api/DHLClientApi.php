@@ -163,7 +163,7 @@ class DHLClientApi
      *
      * @throws \MyDHL\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \MyDHL\Model\RateResponseResponse|\MyDHL\Model\Model401Response
+     * @return \MyDHL\Model\RateRequestResponse|\MyDHL\Model\Model401Response
      */
     public function requestRate($data = null)
     {
@@ -180,7 +180,7 @@ class DHLClientApi
      *
      * @throws \MyDHL\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \MyDHL\Model\RateResponseResponse|\MyDHL\Model\Model401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \MyDHL\Model\RateRequestResponse|\MyDHL\Model\Model401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function requestRateWithHttpInfo($data = null)
     {
@@ -217,17 +217,17 @@ class DHLClientApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\MyDHL\Model\RateResponseResponse' === '\SplFileObject') {
+                    if ('\MyDHL\Model\RateRequestResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ('\MyDHL\Model\RateResponseResponse' !== 'string') {
+                        if ('\MyDHL\Model\RateRequestResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\MyDHL\Model\RateResponseResponse', []),
+                        ObjectSerializer::deserialize($content, '\MyDHL\Model\RateRequestResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -248,13 +248,13 @@ class DHLClientApi
                     ];
             }
 
-            $returnType = '\MyDHL\Model\RateResponseResponse';
+            $returnType = '\MyDHL\Model\RateRequestResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
                 $content = $responseBody->getContents();
-                if ('\MyDHL\Model\RateResponseResponse' !== 'string') {
+                if ('\MyDHL\Model\RateRequestResponse' !== 'string') {
                     $content = json_decode($content);
                 }
             }
@@ -270,7 +270,7 @@ class DHLClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\MyDHL\Model\RateResponseResponse',
+                        '\MyDHL\Model\RateRequestResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -320,7 +320,7 @@ class DHLClientApi
      */
     public function requestRateAsyncWithHttpInfo($data = null)
     {
-        $returnType = '\MyDHL\Model\RateResponseResponse';
+        $returnType = '\MyDHL\Model\RateRequestResponse';
         $request = $this->requestRateRequest($data);
 
         return $this->client

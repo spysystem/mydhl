@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## requestRate
 
-> \MyDHL\Model\RateResponseResponse requestRate($data)
+> \MyDHL\Model\RateRequestResponse requestRate($data)
 
 Requests a Shipment Rate
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\MyDHL\Model\RateResponseResponse**](../Model/RateResponseResponse.md)
+[**\MyDHL\Model\RateRequestResponse**](../Model/RateRequestResponse.md)
 
 ### Authorization
 
