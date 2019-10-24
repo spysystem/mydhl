@@ -948,7 +948,7 @@ definitions:
     required:
       - ShipmentResponse
     properties:
-      RateResponse:
+      ShipmentResponse:
         $ref: '#/definitions/ShipmentResponse'
 #endregion
 
