@@ -2,7 +2,7 @@ swagger: "2.0"
 
 info:
   title: 'Integration for DHL Express MyDHL Service'
-  version: 1.0.0
+  version: 1.1.0
   description: 'OpenAPI description for the Integration with MyDHL'
   contact:
     name: 'Thomas Hansen'
@@ -1265,9 +1265,8 @@ definitions:
         items:
           $ref: '#/definitions/Notification'
       Service:
-        type: array
-        items:
-          $ref: '#/definitions/Service'
+        type: object
+        description: This can be either a Service or an array of Service
 
   RateResponse:
     type: object
