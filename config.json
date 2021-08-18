@@ -3,6 +3,6 @@
 	"modelPackage": "Model",
 	"apiPackage": "Api",
 	"packagePath": "",
-	"composerVendorName": "spysystem",
-	"composerProjectName": "mydhl"
+	"gitUserId": "spysystem",
+	"gitRepoId": "mydhl"
 }
