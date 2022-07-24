@@ -1,17 +1,18 @@
 # MyDHL\DHLClientApi
 
-All URIs are relative to *https://wsbexpress.dhl.com/rest/sndpt*
+All URIs are relative to https://wsbexpress.dhl.com/rest/sndpt, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**requestRate**](DHLClientApi.md#requestRate) | **POST** /RateRequest | Requests a Shipment Rate
-[**requestShipment**](DHLClientApi.md#requestShipment) | **POST** /ShipmentRequest | Create a Shipment
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**requestRate()**](DHLClientApi.md#requestRate) | **POST** /RateRequest | Requests a Shipment Rate |
+| [**requestShipment()**](DHLClientApi.md#requestShipment) | **POST** /ShipmentRequest | Create a Shipment |
 
 
+## `requestRate()`
 
-## requestRate
-
-> \MyDHL\Model\RateRequestResponse requestRate($data)
+```php
+requestRate($data): \MyDHL\Model\RateRequestResponse
+```
 
 Requests a Shipment Rate
 
@@ -42,15 +43,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DHLClientApi->requestRate: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\MyDHL\Model\RateRequestRequest**](../Model/RateRequestRequest.md)| Rate Request Data | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **data** | [**\MyDHL\Model\RateRequestRequest**](../Model/RateRequestRequest.md)| Rate Request Data | [optional] |
 
 ### Return type
 
@@ -63,16 +62,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `requestShipment()`
 
-## requestShipment
-
-> \MyDHL\Model\ShipmentRequestResponse requestShipment($data)
+```php
+requestShipment($data): \MyDHL\Model\ShipmentRequestResponse
+```
 
 Create a Shipment
 
@@ -103,15 +103,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DHLClientApi->requestShipment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\MyDHL\Model\ShipmentRequestRequest**](../Model/ShipmentRequestRequest.md)| Shipment Data | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **data** | [**\MyDHL\Model\ShipmentRequestRequest**](../Model/ShipmentRequestRequest.md)| Shipment Data | [optional] |
 
 ### Return type
 
@@ -124,9 +122,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

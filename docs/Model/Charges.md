@@ -4,10 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [optional] 
-**currency** | **string** |  | [optional] 
-**charge** | [**\MyDHL\Model\Charge[]**](Charge.md) |  | 
+**at_type** | **string** |  | [optional]
+**currency** | **string** |  | [optional]
+**charge** | [**\MyDHL\Model\Charge[]**](Charge.md) |  |
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
