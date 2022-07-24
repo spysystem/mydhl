@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
-
 set -e
 
-rm -rf docs lib test
+rm -rf .openapi-generator docs lib test > /dev/null 2>&1
 
-docker pull spysystem/openapi-generator:th-spy-master
+docker pull spysystem/openapi-generator:spy_branch
+
 docker run \
-	--user $(id -u):$(id -g) \
-	--rm -v ${PWD}:/local spysystem/openapi-generator:th-spy-master generate \
-	-i /local/mydhl.yaml \
-	-g php \
-	-o /local \
-	-c /local/config.json
+    --user $(id -u):$(id -g) \
+    --rm \
+    -v ${PWD}:/local \
+    spysystem/openapi-generator:spy_branch \
+    generate \
+    --generator-name php \
+    --config /local/config.yaml \
+    --input-spec /local/mydhl.yaml \
+    --output /local
 
-git add docs/*
-git add lib/*
-git add test/*
+git add . > /dev/null 2>&1
