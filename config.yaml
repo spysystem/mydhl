@@ -1,6 +1,5 @@
 # https://openapi-generator.tech/docs/usage/#generate
 apiPackage: Api
-artifactVersion: 1.1.0.1
 gitRepoId: mydhl
 gitUserId: spysystem
 invokerPackage: MyDHL
