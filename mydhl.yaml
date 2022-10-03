@@ -800,9 +800,7 @@ definitions:
       Currency:
         type: string
       Charge:
-        type: array
-        items:
-          $ref: '#/definitions/Charge'
+        type: object
 
   TotalNet:
     type: object

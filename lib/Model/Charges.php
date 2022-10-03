@@ -80,7 +80,7 @@ class Charges implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'at_type' => 'string',
         'currency' => 'string',
-        'charge' => '\MyDHL\Model\Charge[]'
+        'charge' => 'object'
     ];
 
     /**
@@ -388,7 +388,7 @@ class Charges implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets charge
      *
-     * @return \MyDHL\Model\Charge[]
+     * @return object
      */
     public function getCharge()
     {
@@ -398,7 +398,7 @@ class Charges implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets charge
      *
-     * @param \MyDHL\Model\Charge[] $charge charge
+     * @param object $charge charge
      *
      * @return self
      */
