@@ -39,7 +39,6 @@ docs/Model/RateRequestRequestedShipment.md
 docs/Model/RateRequestResponse.md
 docs/Model/RateRequestShip.md
 docs/Model/RateRequestStakeHolder.md
-docs/Model/RateRequestTotalNet.md
 docs/Model/RateResponse.md
 docs/Model/Reason.md
 docs/Model/RegistrationNumber.md
@@ -188,9 +187,6 @@ lib/Model/RateRequestShipModelFields.php
 lib/Model/RateRequestStakeHolder.php
 lib/Model/RateRequestStakeHolderModelAttributes.php
 lib/Model/RateRequestStakeHolderModelFields.php
-lib/Model/RateRequestTotalNet.php
-lib/Model/RateRequestTotalNetModelAttributes.php
-lib/Model/RateRequestTotalNetModelFields.php
 lib/Model/RateResponse.php
 lib/Model/RateResponseModelAttributes.php
 lib/Model/RateResponseModelFields.php
@@ -318,7 +314,6 @@ test/Model/RateRequestResponseTest.php
 test/Model/RateRequestShipTest.php
 test/Model/RateRequestStakeHolderTest.php
 test/Model/RateRequestTest.php
-test/Model/RateRequestTotalNetTest.php
 test/Model/RateResponseTest.php
 test/Model/ReasonTest.php
 test/Model/RegistrationNumberTest.php

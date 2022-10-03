@@ -64,7 +64,6 @@ class ServiceModelAttributes
     public string $strPricingDate = 'pricing_date';
     public string $strOriginServiceArea = 'origin_service_area';
     public string $strDestinationServiceArea = 'destination_service_area';
-    public string $strTotalNet = 'total_net';
     public string $strCharges = 'charges';
     public string $strTotalChargeTypes = 'total_charge_types';
 }

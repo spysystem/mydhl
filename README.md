@@ -122,7 +122,6 @@ Class | Method | HTTP request | Description
 - [RateRequestResponse](docs/Model/RateRequestResponse.md)
 - [RateRequestShip](docs/Model/RateRequestShip.md)
 - [RateRequestStakeHolder](docs/Model/RateRequestStakeHolder.md)
-- [RateRequestTotalNet](docs/Model/RateRequestTotalNet.md)
 - [RateResponse](docs/Model/RateResponse.md)
 - [Reason](docs/Model/Reason.md)
 - [RegistrationNumber](docs/Model/RegistrationNumber.md)

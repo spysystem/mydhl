@@ -306,15 +306,6 @@ class ServiceTest extends TestCase
     }
 
     /**
-     * Test attribute "total_net"
-     */
-    public function testPropertyTotalNet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "charges"
      */
     public function testPropertyCharges()

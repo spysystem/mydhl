@@ -103,7 +103,6 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'pricing_date' => 'string',
         'origin_service_area' => '\MyDHL\Model\ServiceArea',
         'destination_service_area' => '\MyDHL\Model\ServiceArea',
-        'total_net' => '\MyDHL\Model\RateRequestTotalNet[]',
         'charges' => '\MyDHL\Model\Charges',
         'total_charge_types' => '\MyDHL\Model\TotalChargeTypes[]'
     ];
@@ -141,7 +140,6 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'pricing_date' => null,
         'origin_service_area' => null,
         'destination_service_area' => null,
-        'total_net' => null,
         'charges' => null,
         'total_charge_types' => null
     ];
@@ -177,7 +175,6 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
 		'pricing_date' => false,
 		'origin_service_area' => false,
 		'destination_service_area' => false,
-		'total_net' => false,
 		'charges' => false,
 		'total_charge_types' => false
     ];
@@ -293,7 +290,6 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'pricing_date' => 'PricingDate',
         'origin_service_area' => 'OriginServiceArea',
         'destination_service_area' => 'DestinationServiceArea',
-        'total_net' => 'TotalNet',
         'charges' => 'Charges',
         'total_charge_types' => 'TotalChargeTypes'
     ];
@@ -329,7 +325,6 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'pricing_date' => 'setPricingDate',
         'origin_service_area' => 'setOriginServiceArea',
         'destination_service_area' => 'setDestinationServiceArea',
-        'total_net' => 'setTotalNet',
         'charges' => 'setCharges',
         'total_charge_types' => 'setTotalChargeTypes'
     ];
@@ -365,7 +360,6 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         'pricing_date' => 'getPricingDate',
         'origin_service_area' => 'getOriginServiceArea',
         'destination_service_area' => 'getDestinationServiceArea',
-        'total_net' => 'getTotalNet',
         'charges' => 'getCharges',
         'total_charge_types' => 'getTotalChargeTypes'
     ];
@@ -482,7 +476,6 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('pricing_date', $data ?? [], null);
         $this->setIfExists('origin_service_area', $data ?? [], null);
         $this->setIfExists('destination_service_area', $data ?? [], null);
-        $this->setIfExists('total_net', $data ?? [], null);
         $this->setIfExists('charges', $data ?? [], null);
         $this->setIfExists('total_charge_types', $data ?? [], null);
     }
@@ -1288,35 +1281,6 @@ class Service implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['destination_service_area'] = $destination_service_area;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_net
-     *
-     * @return \MyDHL\Model\RateRequestTotalNet[]|null
-     */
-    public function getTotalNet()
-    {
-        return $this->container['total_net'];
-    }
-
-    /**
-     * Sets total_net
-     *
-     * @param \MyDHL\Model\RateRequestTotalNet[]|null $total_net total_net
-     *
-     * @return self
-     */
-    public function setTotalNet($total_net)
-    {
-
-        if (is_null($total_net)) {
-            throw new \InvalidArgumentException('non-nullable total_net cannot be null');
-        }
-
-        $this->container['total_net'] = $total_net;
 
         return $this;
     }

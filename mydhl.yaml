@@ -1173,16 +1173,6 @@ definitions:
            $ref: '#/definitions/TotalChargeType'
 
 
-  RateRequestTotalNet:
-    type: object
-    properties:
-      Currency:
-        type: string
-      Amount:
-        type: number
-      '@type':
-        type: string
-
   Service:
     type: object
     properties:
@@ -1242,10 +1232,6 @@ definitions:
         $ref: '#/definitions/ServiceArea'
       DestinationServiceArea:
         $ref: '#/definitions/ServiceArea'
-      TotalNet:
-        type: array
-        items:
-          $ref: '#/definitions/RateRequestTotalNet'
       Charges:
         $ref: '#/definitions/Charges'
       TotalChargeTypes:

@@ -29,7 +29,6 @@ Name | Type | Description | Notes
 **pricing_date** | **string** |  | [optional]
 **origin_service_area** | [**\MyDHL\Model\ServiceArea**](ServiceArea.md) |  | [optional]
 **destination_service_area** | [**\MyDHL\Model\ServiceArea**](ServiceArea.md) |  | [optional]
-**total_net** | [**\MyDHL\Model\RateRequestTotalNet[]**](RateRequestTotalNet.md) |  | [optional]
 **charges** | [**\MyDHL\Model\Charges**](Charges.md) |  | [optional]
 **total_charge_types** | [**\MyDHL\Model\TotalChargeTypes[]**](TotalChargeTypes.md) |  | [optional]
 
