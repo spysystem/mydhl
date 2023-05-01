@@ -12,8 +12,8 @@ docker run \
     spysystem/openapi-generator:spy_branch \
     generate \
     --generator-name php \
-    --config /local/config.yaml \
-    --input-spec /local/src/mydhl.yaml \
+    --config /local/config.json \
+    --input-spec /local/mydhl.yaml \
     --output /local
 
 git add . > /dev/null 2>&1
