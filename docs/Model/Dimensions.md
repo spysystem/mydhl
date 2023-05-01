@@ -4,10 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**length** | **float** |  | [optional] 
-**width** | **float** |  | [optional] 
-**height** | **float** |  | [optional] 
+**length** | **float** | Length of the package |
+**width** | **float** | Width of the package |
+**height** | **float** | Height of the package |
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
